@@ -72,3 +72,11 @@ lim2002 <- function(x, scale_it=F, scale_low = c(0,1), scale_high = c(0,1)) {
   9 + 2.5 * x[1] - 17.5 * x[2] + 2.5 * x[1] * x[2] + 19 * x[2]^2 -
     7.5 * x[1]^3 - 2.5 * x[1] * x[2]^2 - 5.5 * x[2]^4 + x[1]^3 * x[2]^2
 }
+
+banana <- function(x, scale_it=T, scale_low = c(-20,-10), scale_high = c(20,5)) {
+  # 2 dim, See Roshan SMED
+  test_func_apply(func=.banana, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+}
+.banana <- function(x){
+  exp(-.005*x[1]^2-.5*(x[2]+.03*x[1]^2-3)^2)
+}
