@@ -10,7 +10,7 @@ test_func_apply <- function(func, x, scale_it, scale_low, scale_high, ...) {#bro
   }
   if (scale_it) {
     #return(func((x - scale_low) / (scale_high - scale_low)))
-    return(func(x * (scale_high - scale_low) + scale_low), ...=...)
+    return(func(x * (scale_high - scale_low) + scale_low, ...=...))
   }
   func(x, ...=...)
 }
@@ -108,7 +108,7 @@ sqrtsin <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1)) {
   test_func_apply(func=.sqrtsin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
 }
 .sqrtsin <- function(x, freq=2*pi) {
-  ss <- sin(freq*x)
+  ss <- sum(sin(freq*x))
   sqrt(abs(ss))*sign(ss)
 }
 
