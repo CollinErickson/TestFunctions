@@ -1,5 +1,7 @@
-test_func_apply <- function(func, x, scale_it, scale_low, scale_high, ...) {#browser()
+test_func_apply <- function(func, x, scale_it, scale_low, scale_high, noise=0, ...) {#browser()
+  if (noise < 0 | !is.numeric(noise)) noise <- 0
   if (is.matrix(x)) {
+    noise.out <- rnorm(nrow(x), 0, noise)
     apply(x, 1, test_func_apply, func=func, scale_it=scale_it, scale_low=scale_low, scale_high=scale_high, ...=...)
     if (scale_it) {
       #return(apply(x, 1, function(y){func((y - scale_low) / (scale_high - scale_low))}))
@@ -8,16 +10,18 @@ test_func_apply <- function(func, x, scale_it, scale_low, scale_high, ...) {#bro
       return(apply(x, 1, func, ...=...))
     }
   }
+  # otherwise is single value
+  noise.out <- rnorm(1, 0, noise)
   if (scale_it) {
     #return(func((x - scale_low) / (scale_high - scale_low)))
-    return(func(x * (scale_high - scale_low) + scale_low, ...=...))
+    return(func(x * (scale_high - scale_low) + scale_low, ...=...) + noise.out)
   }
-  func(x, ...=...)
+  func(x, ...=...) + noise.out
 }
 
-standard_test_func <- function(func, scale_it=F, scale_low = NULL, scale_high = NULL, ...) {
-  function(x) {
-    test_func_apply(func=func, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, ...=...)
+standard_test_func <- function(func, scale_it_=F, scale_low_ = NULL, scale_high_ = NULL, noise_=0, ...) {
+  function(x, scale_it=scale_it_, scale_low = scale_low_, scale_high = scale_high_, noise=noise_) {
+    test_func_apply(func=func, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...=...)
   }
 }
 
@@ -99,7 +103,7 @@ gaussian1 <- standard_test_func(.gaussian1, scale_it=F, scale_low = c(0,0), scal
 #waterfall <- sinumoid <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1)) {
 #  test_func_apply(func=.sinumoid, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
 #}
-waterfall <- sinumoid <- standard_test_func(.sinumoid, scale_it=F, scale_low = c(0,0), scale_high = c(1,1))
+waterfall <- sinumoid <- standard_test_func(.sinumoid, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0)
 .sinumoid <- function(x){
   sum(sin(2*pi*x*3)) + 20/(1+exp(-80*(x[[1]]-.5)))
 }
