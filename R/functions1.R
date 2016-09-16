@@ -125,3 +125,14 @@ powsin <- standard_test_func(.powsin, scale_it=F, scale_low = c(0,0), scale_high
   (abs(ss) ^ pow) * sign(ss)
 }
 
+OTL_Circuit <- standard_test_func(.OTL_Circuit, scale_it=T,
+                                  scale_low = c(50,25,0.5,1.2,0.25,50),
+                                  scale_high = c(150,70,3,2.5,1.2,300), pow=1)
+.OTL_Circuit <- function(x, freq=2*pi, pow=.7) {
+  Vb1 <- 12*x[2] / (x[1] + x[2])
+  BRc29 <- x[6] * (x[5] + 9) #+ x[3]
+  t1 <- (Vb1 + 0.74) * BRc29 / (BRc29 + x[3])
+  t2 <- 11.35 * x[3] / (BRc29 + x[3])
+  t3 <- .74 * x[3] * BRc29 / ((BRc29 + x[3]) * x[4])
+  t1 + t2 + t3
+}
