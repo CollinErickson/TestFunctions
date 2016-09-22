@@ -1,9 +1,13 @@
 Package: TestFunctions
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Test Functions for Testing Optimization, Emulation, and Simulation Experiments
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Collin Erickson
+Maintainer: Collin Erickson <collinberickson@gmail.com>
+Description: Test functions are often used to test computer code.
+  They are used in optimization to test algorithms. They are used in
+  metamodeling to evaluate model predictions. This package provides
+  test functions that can be used for any purpose.
+License: GPL-3
 LazyData: TRUE
+RoxygenNote: 5.0.1
