@@ -4,6 +4,7 @@
 #' @rdname test_func_apply
 #' @examples
 #' branin(runif(2))
+#' branin(matrix(runif(20), ncol=2))
 branin <- function(x, scale_it=T, scale_low = c(-5, 0), scale_high = c(10, 15)) {
   # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
   test_func_apply(func=TF_branin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
@@ -32,6 +33,7 @@ TF_branin <- function(x, a=1, b=5.1/(4*pi^2), cc=5/pi, r=6, s=10, tt=1/(8*pi)) {
 #' @rdname test_func_apply
 #' @examples
 #' borehole(runif(8))
+#' borehole(matrix(runif(80), ncol=8))
 borehole <- function(x, scale_it=T,
                      scale_low = c(.05,100,63070,990,63.1,700,1120,9855),
                      scale_high = c(.15,50000,115600,1110,116,820,1680,12045)) {
@@ -206,6 +208,9 @@ TF_gaussian1 <- function(x, center=.5, s2=.01) {
 #' @rdname test_func_apply
 #' @examples
 #' sinumoid(runif(2))
+#' x <- y <- seq(0, 1, len=100)
+#' z <- outer(x, y, Vectorize(function(a, b){sinumoid(c(a, b))}))
+#' contour(x, y, z)
 sinumoid <- function(x, scale_it=F, scale_low = c(0, 0), scale_high = c(1,1)) {
   # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
   test_func_apply(func=TF_sinumoid, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)

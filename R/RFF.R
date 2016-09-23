@@ -1,14 +1,63 @@
-nsin <- function(xx) {-1+2*ceiling(sin(xx))} # block wave
+#' Wave functions
+#'
+#' nsin: Block wave
+#'
+#' @param xx Input values
+#'
+#' @return nsin evaluated at nsin
+#' @export
+#'
+#' @examples
+#' curve(nsin(2*pi*x), n = 1000)
+#' curve(nsin(12*pi*x), n = 1000)
+nsin <- function(xx) {sign(sin(xx))}#{-1+2*ceiling(sin(xx))} # block wave
+
+#' vsin: v wave
+#' @rdname nsin
+#' @export
+#' @examples
+#' curve(vsin(2*pi*x), n = 1000)
+#' curve(vsin(12*pi*x), n = 1000)
 vsin <- function(xx) { # v/w wave
   yy <- xx%%(2*pi)
   ifelse(yy<pi/2,yy/(pi/2),0) +
     ifelse(yy>=pi/2 & yy<3*pi/2,2-yy/(pi/2),0) +
     ifelse(yy>=3*pi/2,-4+yy/(pi/2),0)
 }
+
+
+#' Evaluate an RFF (random wave function) at given input
+#'
+#' @param x Matrix whose rows are points to evaluate
+#' @param freq Vector of wave frequencies
+#' @param mag Vector of wave magnitudes
+#' @param dirr Matrix of wave directions
+#' @param offset Vector of wave offsets
+#' @param wave Type of wave
+#'
+#' @return Output of RFF evaluated at x
+#' @export
+#'
+#' @examples
+#' curve(RFF(x,3,1,1,0))
+#' curve(RFF(x,c(3,20),c(1,.1),c(1,1),c(0,0)), n=1e3)
 RFF <- function(x,freq,mag,dirr,offset, wave=sin) {
   #x <- matrix(x,ncol=2)
   (wave(2*pi* sweep(sweep(x %*% t(dirr),2,offset,'+'), 2,freq,'*')) %*% mag)
 }
+
+#' Create a new RFF function
+#'
+#' @param D Number of dimensions
+#' @param M Number of random waves
+#' @param wave Type of wave
+#'
+#' @return A random wave function
+#' @export
+#'
+#' @examples
+#' func <- RFF_get(D=1)
+#' curve(func)
 RFF_get <- function(D=2, M=30, wave=sin) {
   freq <- sort((rexp(M,1/7))) + 0.5 # can use ceiling to get ints, then don't add anything
   mag <- matrix(sapply(1:M,function(i){runif(1,-1/freq[i],1/freq[i])}), ncol=1)
