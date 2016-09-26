@@ -1,4 +1,6 @@
-#' Branin: A function.
+#' Test function.
+#'
+#' branin: A function.
 #' 2 dimensional function.
 #' @export
 #' @rdname test_func_apply
@@ -9,6 +11,8 @@ branin <- function(x, scale_it=T, scale_low = c(-5, 0), scale_high = c(10, 15)) 
   # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
   test_func_apply(func=TF_branin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
 }
+#' Base test function.
+#'
 #' TF_branin: A function taking in a single vector.
 #' 2 dimensional function.
 #' See corresponding function with "TF_" for more details.
@@ -56,7 +60,7 @@ TF_borehole <- function(x) {
 }
 
 
-#' Franke: A function.
+#' franke: A function.
 #' 2 dimensional function.
 #' @export
 #' @rdname test_func_apply

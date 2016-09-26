@@ -41,7 +41,9 @@ test_func_apply <- function(func, x, scale_it, scale_low, scale_high, noise=0, .
   func(x, ...) + noise.out
 }
 
-#' Create a standard test function. This makes it easier to create
+#' Create a standard test function.
+#'
+#' This makes it easier to create
 #' many functions that follow the same template.
 #' R CMD check doesn't like the ... if this command is used to
 #' create functions in the package, so it is not currently used.

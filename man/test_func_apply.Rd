@@ -15,8 +15,7 @@
 \alias{test_func_apply}
 \alias{waterfall}
 \alias{zhou1998}
-\title{Branin: A function.
-2 dimensional function.}
+\title{Test function.}
 \usage{
 branin(x, scale_it = T, scale_low = c(-5, 0), scale_high = c(10, 15))
 
@@ -78,13 +77,13 @@ standard deviation for normal noise}
 Function values at x
 }
 \description{
-Branin: A function.
+branin: A function.
 2 dimensional function.
 
 borehole: A function estimating water flow through a borehole.
 8 dimensional function.
 
-Franke: A function.
+franke: A function.
 2 dimensional function.
 
 zhou1998: A function.

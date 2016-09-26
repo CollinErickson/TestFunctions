@@ -2,10 +2,7 @@
 % Please edit documentation in R/test_func_apply.R
 \name{standard_test_func}
 \alias{standard_test_func}
-\title{Create a standard test function. This makes it easier to create
-many functions that follow the same template.
-R CMD check doesn't like the ... if this command is used to
-create functions in the package, so it is not currently used.}
+\title{Create a standard test function.}
 \usage{
 standard_test_func(func, scale_it_ = F, scale_low_ = NULL,
   scale_high_ = NULL, noise_ = 0, ...)
@@ -29,7 +26,7 @@ actually giving the output function points to evaluate.}
 A test function created using the standard_test_func template.
 }
 \description{
-Create a standard test function. This makes it easier to create
+This makes it easier to create
 many functions that follow the same template.
 R CMD check doesn't like the ... if this command is used to
 create functions in the package, so it is not currently used.

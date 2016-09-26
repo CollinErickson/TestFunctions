@@ -13,9 +13,7 @@
 \alias{TF_sinumoid}
 \alias{TF_sqrtsin}
 \alias{TF_zhou1998}
-\title{TF_branin: A function taking in a single vector.
-2 dimensional function.
-See corresponding function with "TF_" for more details.}
+\title{Base test function.}
 \usage{
 TF_branin(x, a = 1, b = 5.1/(4 * pi^2), cc = 5/pi, r = 6, s = 10,
   tt = 1/(8 * pi))
