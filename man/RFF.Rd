@@ -4,10 +4,12 @@
 \alias{RFF}
 \title{Evaluate an RFF (random wave function) at given input}
 \usage{
-RFF(x, freq, mag, dirr, offset, wave = sin)
+RFF(x, freq, mag, dirr, offset, wave = sin, noise = 0)
 }
 \arguments{
-\item{x}{Matrix whose rows are points to evaluate}
+\item{x}{Matrix whose rows are points to evaluate or a vector representing
+a single point. In 1 dimension you must use a matrix for multiple points,
+not a vector.}
 
 \item{freq}{Vector of wave frequencies}
 
@@ -18,6 +20,8 @@ RFF(x, freq, mag, dirr, offset, wave = sin)
 \item{offset}{Vector of wave offsets}
 
 \item{wave}{Type of wave}
+
+\item{noise}{Standard deviation of random normal noise to add}
 }
 \value{
 Output of RFF evaluated at x
@@ -26,7 +30,9 @@ Output of RFF evaluated at x
 Evaluate an RFF (random wave function) at given input
 }
 \examples{
-curve(RFF(x,3,1,1,0))
-curve(RFF(x,c(3,20),c(1,.1),c(1,1),c(0,0)), n=1e3)
+curve(RFF(matrix(x,ncol=1),3,1,1,0))
+curve(RFF(matrix(x,ncol=1),3,1,1,0, noise=.1), n=1e3, type='p', pch=19)
+
+curve(RFF(matrix(x,ncol=1),c(3,20),c(1,.1),c(1,1),c(0,0)), n=1e3)
 }
 
