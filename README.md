@@ -16,12 +16,13 @@ How do I use it?
 Each of the test functions is called like any other function. The first argument, `x`, should be a vector representing one point or a matrix that has points in its rows. This can cause problems if you are using a 1-dimensional function and pass in a vector of values. Instead you should pass them in as a matrix with a single column, or vectorize the function.
 
 ``` r
+set.seed(0)
 library(TestFunctions)
 branin(runif(2))
-#> [1] 22.4688
+#> [1] 9.476405
 branin(matrix(runif(20), ncol=2))
-#>  [1]   3.347052  85.693666   9.868260  25.292969  31.401228 121.020330
-#>  [7]  79.850261  33.593950 157.557921  55.711790
+#>  [1]  24.119600  71.180268  18.374071   9.839029  36.607437  72.884496
+#>  [7] 196.302169  25.185022  13.059216  27.129463
 ```
 
 ``` r

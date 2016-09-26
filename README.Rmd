@@ -32,6 +32,7 @@ problems if you are using a 1-dimensional function and pass in a vector of value
 Instead you should pass them in as a matrix with a single column, or vectorize the function.
 
 ```{r}
+set.seed(0)
 library(TestFunctions)
 branin(runif(2))
 branin(matrix(runif(20), ncol=2))
