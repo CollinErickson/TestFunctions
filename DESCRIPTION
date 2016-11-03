@@ -14,3 +14,6 @@ Description: Test functions are often used to test computer code.
 License: GPL-3
 LazyData: TRUE
 RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

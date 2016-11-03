@@ -274,7 +274,7 @@ TF_sqrtsin <- function(x, freq=2*pi) {
 #' @examples
 #' powsin(runif(1))#,pow=2)
 powsin <- function(x, scale_it=F, scale_low = c(0, 0), scale_high = c(1,1), noise=0, freq=2*pi, pow=.7) {
-  test_func_apply(func=TF_powsin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, freq=freq, pow=pow)
+  test_func_apply(func=TF_powsin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, freq=freq, pow=pow)
 }
 #powsin <- standard_test_func(TF_powsin, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), pow=1)
 
@@ -321,4 +321,96 @@ TF_OTL_Circuit <- function(x) {
   t2 <- 11.35 * x[3] / (BRc29 + x[3])
   t3 <- .74 * x[3] * BRc29 / ((BRc29 + x[3]) * x[4])
   t1 + t2 + t3
+}
+
+
+
+#' GoldsteinPrice: Goldstein-Price function. Exponential scale, you
+#' might want to use GoldsteinPriceLog instead
+#' 2 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' GoldsteinPrice(runif(2))
+#' GoldsteinPrice(matrix(runif(60),ncol=2))
+GoldsteinPrice <- function(x, scale_it=T, scale_low = c(-2,-2), scale_high = c(2,2)) {
+  test_func_apply(func=TF_GoldsteinPrice, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+}
+
+#' TF_GoldsteinPrice: Goldstein Price function for evaluating a single point
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_GoldsteinPrice(c(0, -1)) # minimum
+TF_GoldsteinPrice <- function(x) {
+  a1 <- 1 + (x[1]+x[2]+1)^2 * (19-14*x[1]+3*x[1]^2-14*x[2]+6*x[1]*x[2]+3*x[2]^2)
+  a2 <- 30 + (2*x[1]-3*x[2])^2 * (18-32*x[1]+12*x[1]^2+48*x[2]-36*x[1]*x[2]+27*x[2]^2)
+  a1 * a2
+}
+
+
+
+#' GoldsteinPriceLog: Goldstein-Price function on a log scale.
+#' 2 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' GoldsteinPriceLog(runif(2))
+#' GoldsteinPriceLog(matrix(runif(60),ncol=2))
+GoldsteinPriceLog <- function(x, scale_it=T, scale_low = c(-2,-2), scale_high = c(2,2)) {
+  test_func_apply(func=TF_GoldsteinPriceLog, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+}
+
+#' TF_GoldsteinPrice: Goldstein Price function for evaluating a single point
+#' on a log scale, normalized to have mean 0 and variance 1.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_GoldsteinPriceLog(c(0, -1)) # minimum
+TF_GoldsteinPriceLog <- function(x) {
+  a1 <- 1 + (x[1]+x[2]+1)^2 * (19-14*x[1]+3*x[1]^2-14*x[2]+6*x[1]*x[2]+3*x[2]^2)
+  a2 <- 30 + (2*x[1]-3*x[2])^2 * (18-32*x[1]+12*x[1]^2+48*x[2]-36*x[1]*x[2]+27*x[2]^2)
+  a3 <- a1 * a2
+  (log(a3) - 8.693) / 2.427
+}
+
+
+
+
+#' ackley: Ackley function.
+#' 2 dimensional function.
+#' @param a A constant for ackley()
+#' @param b A constant for ackley()
+#' @param c A constant for ackley()
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' ackley(runif(2))
+#' ackley(matrix(runif(60),ncol=2))
+ackley <- function(x, scale_it=T, scale_low = -32.768, scale_high = 32.768, a=20, b=0.2, c=2*pi) {
+  test_func_apply(func=TF_ackley, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, a=a, b=b, c=c)
+}
+
+#' TF_ackley: Ackley function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @param a A constant for ackley()
+#' @param b A constant for ackley()
+#' @param c A constant for ackley()
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_ackley(c(0, 0)) # minimum of zero, hard to solve
+TF_ackley <- function(x, a=20, b=0.2, c=2*pi) {
+  -a * exp(-b*sqrt(mean(x^2))) - exp(mean(cos(c*x))) + a + exp(1)
 }

@@ -4,7 +4,7 @@
 \alias{RFF_get}
 \title{Create a new RFF function}
 \usage{
-RFF_get(D = 2, M = 30, wave = sin, noise = 0)
+RFF_get(D = 2, M = 30, wave = sin, noise = 0, seed = NULL)
 }
 \arguments{
 \item{D}{Number of dimensions}
@@ -14,6 +14,8 @@ RFF_get(D = 2, M = 30, wave = sin, noise = 0)
 \item{wave}{Type of wave}
 
 \item{noise}{Standard deviation of random normal noise to add}
+
+\item{seed}{Seed to set before randomly selecting function}
 }
 \value{
 A random wave function
