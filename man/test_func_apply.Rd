@@ -20,45 +20,54 @@
 \alias{zhou1998}
 \title{Test function.}
 \usage{
-branin(x, scale_it = T, scale_low = c(-5, 0), scale_high = c(10, 15))
+branin(x, scale_it = T, scale_low = c(-5, 0), scale_high = c(10, 15),
+  noise = 0)
 
 borehole(x, scale_it = T, scale_low = c(0.05, 100, 63070, 990, 63.1, 700,
   1120, 9855), scale_high = c(0.15, 50000, 115600, 1110, 116, 820, 1680,
-  12045))
+  12045), noise = 0)
 
-franke(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1))
+franke(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+  noise = 0)
 
-zhou1998(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1))
+zhou1998(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+  noise = 0)
 
-currin1991(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1))
+currin1991(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+  noise = 0)
 
-lim2002(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1))
+lim2002(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+  noise = 0)
 
-banana(x, scale_it = T, scale_low = c(-20, -10), scale_high = c(20, 5))
+banana(x, scale_it = T, scale_low = c(-20, -10), scale_high = c(20, 5),
+  noise = 0)
 
-gaussian1(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1))
+gaussian1(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+  noise = 0)
 
-sinumoid(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1))
+sinumoid(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+  noise = 0)
 
-waterfall(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1))
+waterfall(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+  noise = 0)
 
 sqrtsin(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  freq = 2 * pi)
+  noise = 0, freq = 2 * pi)
 
 powsin(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0, freq = 2 * pi, pow = 0.7)
 
 OTL_Circuit(x, scale_it = T, scale_low = c(50, 25, 0.5, 1.2, 0.25, 50),
-  scale_high = c(150, 70, 3, 2.5, 1.2, 300))
+  scale_high = c(150, 70, 3, 2.5, 1.2, 300), noise = 0)
 
 GoldsteinPrice(x, scale_it = T, scale_low = c(-2, -2), scale_high = c(2,
-  2))
+  2), noise = 0)
 
 GoldsteinPriceLog(x, scale_it = T, scale_low = c(-2, -2),
-  scale_high = c(2, 2))
+  scale_high = c(2, 2), noise = 0)
 
 ackley(x, scale_it = T, scale_low = -32.768, scale_high = 32.768,
-  a = 20, b = 0.2, c = 2 * pi)
+  noise = 0, a = 20, b = 0.2, c = 2 * pi)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -74,10 +83,10 @@ to be in [0, 1]^D, but the function isn't.}
 
 \item{scale_high}{Upper bound for each variable}
 
-\item{freq}{Wave frequency for sqrtsin and powsin}
-
 \item{noise}{If white noise should be added, specify the
 standard deviation for normal noise}
+
+\item{freq}{Wave frequency for sqrtsin and powsin}
 
 \item{pow}{Power for powsin}
 

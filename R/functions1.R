@@ -7,9 +7,9 @@
 #' @examples
 #' branin(runif(2))
 #' branin(matrix(runif(20), ncol=2))
-branin <- function(x, scale_it=T, scale_low = c(-5, 0), scale_high = c(10, 15)) {
+branin <- function(x, scale_it=T, scale_low = c(-5, 0), scale_high = c(10, 15), noise=0) {
   # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
-  test_func_apply(func=TF_branin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+  test_func_apply(func=TF_branin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' Base test function.
 #'
@@ -40,8 +40,8 @@ TF_branin <- function(x, a=1, b=5.1/(4*pi^2), cc=5/pi, r=6, s=10, tt=1/(8*pi)) {
 #' borehole(matrix(runif(80), ncol=8))
 borehole <- function(x, scale_it=T,
                      scale_low = c(.05,100,63070,990,63.1,700,1120,9855),
-                     scale_high = c(.15,50000,115600,1110,116,820,1680,12045)) {
-  test_func_apply(func=TF_borehole, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+                     scale_high = c(.15,50000,115600,1110,116,820,1680,12045), noise=0) {
+  test_func_apply(func=TF_borehole, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_borehole: A function taking in a single vector.
 #' 8 dimensional function.
@@ -66,9 +66,9 @@ TF_borehole <- function(x) {
 #' @rdname test_func_apply
 #' @examples
 #' franke(runif(2))
-franke <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1)) {
+franke <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
   # 2 dim, http://www.sfu.ca/~ssurjano/franke2d.html
-  test_func_apply(func=TF_franke, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+  test_func_apply(func=TF_franke, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_franke: A function taking in a single vector.
 #' 2 dimensional function.
@@ -91,9 +91,9 @@ TF_franke <- function(x) {
 #' @rdname test_func_apply
 #' @examples
 #' zhou1998(runif(2))
-zhou1998 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1)) {
+zhou1998 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
   # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
-  test_func_apply(func=TF_zhou1998, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+  test_func_apply(func=TF_zhou1998, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_zhou1998: A function taking in a single vector.
 #' 2 dimensional function.
@@ -117,9 +117,9 @@ TF_zhou1998 <- function(x) {
 #' @rdname test_func_apply
 #' @examples
 #' currin1991(runif(2))
-currin1991 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1)) {
+currin1991 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
   # 2 dim, http://www.sfu.ca/~ssurjano/curretal91.html
-  test_func_apply(func=TF_currin1991, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+  test_func_apply(func=TF_currin1991, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_currin1991: A function taking in a single vector.
 #' 2 dimensional function.
@@ -140,9 +140,9 @@ TF_currin1991 <- function(x) {
 #' @rdname test_func_apply
 #' @examples
 #' lim2002(runif(2))
-lim2002 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1)) {
+lim2002 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
   # 2 dim, http://www.sfu.ca/~ssurjano/limetal02pol.html
-  test_func_apply(func=TF_lim2002, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+  test_func_apply(func=TF_lim2002, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_lim2002: A function taking in a single vector.
 #' 2 dimensional function.
@@ -166,9 +166,9 @@ TF_lim2002 <- function(x) {
 #' x <- y <- seq(0, 1, len=100)
 #' z <- outer(x, y, Vectorize(function(a, b){banana(c(a, b))}))
 #' contour(x, y, z)
-banana <- function(x, scale_it=T, scale_low = c(-20,-10), scale_high = c(20,5)) {
+banana <- function(x, scale_it=T, scale_low = c(-20,-10), scale_high = c(20,5), noise=0) {
   # 2 dim, See Roshan SMED
-  test_func_apply(func=TF_banana, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+  test_func_apply(func=TF_banana, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_banana: A function taking in a single vector.
 #' 2 dimensional function.
@@ -187,9 +187,9 @@ TF_banana <- function(x){
 #' @rdname test_func_apply
 #' @examples
 #' gaussian1(runif(2))
-gaussian1 <- function(x, scale_it=F, scale_low = c(0, 0), scale_high = c(1,1)) {
+gaussian1 <- function(x, scale_it=F, scale_low = c(0, 0), scale_high = c(1,1), noise=0) {
   # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
-  test_func_apply(func=TF_gaussian1, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+  test_func_apply(func=TF_gaussian1, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #gaussian1 <- standard_test_func(TF_gaussian1, scale_it=F, scale_low = c(0,0), scale_high = c(1,1))
 
@@ -215,9 +215,9 @@ TF_gaussian1 <- function(x, center=.5, s2=.01) {
 #' x <- y <- seq(0, 1, len=100)
 #' z <- outer(x, y, Vectorize(function(a, b){sinumoid(c(a, b))}))
 #' contour(x, y, z)
-sinumoid <- function(x, scale_it=F, scale_low = c(0, 0), scale_high = c(1,1)) {
+sinumoid <- function(x, scale_it=F, scale_low = c(0, 0), scale_high = c(1,1), noise=0) {
   # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
-  test_func_apply(func=TF_sinumoid, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+  test_func_apply(func=TF_sinumoid, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #sinumoid <- standard_test_func(TF_sinumoid, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0)
 #' TF_sinumoid: A function taking in a single vector.
@@ -248,8 +248,8 @@ waterfall <- sinumoid
 #' @examples
 #' sqrtsin(runif(1))
 #' curve(sqrtsin(matrix(x,ncol=1)))
-sqrtsin <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), freq=2*pi) {
-  test_func_apply(func=TF_sqrtsin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, freq=freq)
+sqrtsin <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0, freq=2*pi) {
+  test_func_apply(func=TF_sqrtsin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, freq=freq)
 }
 #' TF_sqrtsin: A function taking in a single vector.
 #' Any dimensional function.
@@ -298,8 +298,8 @@ TF_powsin <- function(x, freq=2*pi, pow=.7) {
 #' @examples
 #' OTL_Circuit(runif(6))
 #' OTL_Circuit(matrix(runif(60),ncol=6))
-OTL_Circuit <- function(x, scale_it=T, scale_low = c(50,25,0.5,1.2,0.25,50), scale_high = c(150,70,3,2.5,1.2,300)) {
-test_func_apply(func=TF_OTL_Circuit, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+OTL_Circuit <- function(x, scale_it=T, scale_low = c(50,25,0.5,1.2,0.25,50), scale_high = c(150,70,3,2.5,1.2,300), noise=0) {
+  test_func_apply(func=TF_OTL_Circuit, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #OTL_Circuit <- standard_test_func(TF_OTL_Circuit, scale_it=T,
 #                                  scale_low = c(50,25,0.5,1.2,0.25,50),
@@ -333,8 +333,8 @@ TF_OTL_Circuit <- function(x) {
 #' @examples
 #' GoldsteinPrice(runif(2))
 #' GoldsteinPrice(matrix(runif(60),ncol=2))
-GoldsteinPrice <- function(x, scale_it=T, scale_low = c(-2,-2), scale_high = c(2,2)) {
-  test_func_apply(func=TF_GoldsteinPrice, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+GoldsteinPrice <- function(x, scale_it=T, scale_low = c(-2,-2), scale_high = c(2,2), noise=0) {
+  test_func_apply(func=TF_GoldsteinPrice, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 
 #' TF_GoldsteinPrice: Goldstein Price function for evaluating a single point
@@ -361,8 +361,8 @@ TF_GoldsteinPrice <- function(x) {
 #' @examples
 #' GoldsteinPriceLog(runif(2))
 #' GoldsteinPriceLog(matrix(runif(60),ncol=2))
-GoldsteinPriceLog <- function(x, scale_it=T, scale_low = c(-2,-2), scale_high = c(2,2)) {
-  test_func_apply(func=TF_GoldsteinPriceLog, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high)
+GoldsteinPriceLog <- function(x, scale_it=T, scale_low = c(-2,-2), scale_high = c(2,2), noise=0) {
+  test_func_apply(func=TF_GoldsteinPriceLog, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 
 #' TF_GoldsteinPrice: Goldstein Price function for evaluating a single point
@@ -395,8 +395,8 @@ TF_GoldsteinPriceLog <- function(x) {
 #' @examples
 #' ackley(runif(2))
 #' ackley(matrix(runif(60),ncol=2))
-ackley <- function(x, scale_it=T, scale_low = -32.768, scale_high = 32.768, a=20, b=0.2, c=2*pi) {
-  test_func_apply(func=TF_ackley, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, a=a, b=b, c=c)
+ackley <- function(x, scale_it=T, scale_low = -32.768, scale_high = 32.768, noise=0, a=20, b=0.2, c=2*pi) {
+  test_func_apply(func=TF_ackley, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, a=a, b=b, c=c)
 }
 
 #' TF_ackley: Ackley function for evaluating a single point.
