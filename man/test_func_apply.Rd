@@ -12,6 +12,7 @@
 \alias{franke}
 \alias{gaussian1}
 \alias{lim2002}
+\alias{piston}
 \alias{powsin}
 \alias{sinumoid}
 \alias{sqrtsin}
@@ -68,6 +69,10 @@ GoldsteinPriceLog(x, scale_it = T, scale_low = c(-2, -2),
 
 ackley(x, scale_it = T, scale_low = -32.768, scale_high = 32.768,
   noise = 0, a = 20, b = 0.2, c = 2 * pi)
+
+piston(x, scale_it = T, scale_low = c(30, 0.005, 0.002, 1000, 90000, 290,
+  340), scale_high = c(60, 0.02, 0.01, 5000, 110000, 296, 360), noise = 0,
+  a = 20, b = 0.2, c = 2 * pi)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -153,6 +158,9 @@ GoldsteinPriceLog: Goldstein-Price function on a log scale.
 ackley: Ackley function.
 2 dimensional function.
 
+piston: Piston simulation function.
+7 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -185,6 +193,8 @@ GoldsteinPriceLog(runif(2))
 GoldsteinPriceLog(matrix(runif(60),ncol=2))
 ackley(runif(2))
 ackley(matrix(runif(60),ncol=2))
+piston(runif(7))
+piston(matrix(runif(7*20),ncol=7))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)

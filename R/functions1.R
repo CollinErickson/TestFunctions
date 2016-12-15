@@ -414,3 +414,39 @@ ackley <- function(x, scale_it=T, scale_low = -32.768, scale_high = 32.768, nois
 TF_ackley <- function(x, a=20, b=0.2, c=2*pi) {
   -a * exp(-b*sqrt(mean(x^2))) - exp(mean(cos(c*x))) + a + exp(1)
 }
+
+
+
+#' piston: Piston simulation function.
+#' 7 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' piston(runif(7))
+#' piston(matrix(runif(7*20),ncol=7))
+piston <- function(x, scale_it=T, scale_low = c(30,.005,.002,1e3,9e4,290,340), scale_high = c(60,.02,.01,5e3,11e4,296,360), noise=0, a=20, b=0.2, c=2*pi) {
+  test_func_apply(func=TF_piston, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
+}
+
+#' TF_piston: Piston simulation function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_piston(c(30,.005,.002,1e3,9e4,290,340)) # minimum of zero, hard to solve
+TF_piston <- function(x) {
+  M <- x[1]
+  S <- x[2]
+  V0 <- x[3]
+  k <- x[4]
+  P0 <- x[5]
+  Ta <- x[6]
+  T0 <- x[7]
+  A <- P0*S + 19.62*M -k*V0/S
+  V <- S/(2*k) * (sqrt(A^2+4*k*P0*V0/T0*Ta) - A)
+  C <- 2*pi * sqrt(M / (k + S^2*P0*V0/T0*Ta/V^2))
+  C
+}
