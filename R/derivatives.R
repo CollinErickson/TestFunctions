@@ -1,6 +1,7 @@
 #' Create function calculating the numerical gradient
 #'
-#' @param func Function to get gradient of
+#' @param func Function to get gradient of.
+#' @param ... Arguments passed to numDeriv::grad().
 #'
 #' @return A gradient function
 #' @export
@@ -14,6 +15,7 @@ numGrad <- function(func, ...) {
 #' Create function calculating the numerical hessian
 #'
 #' @param func Function to get hessian of
+#' @param ... Arguments passed to numDeriv::hessian().
 #'
 #' @return A hessian function
 #' @export

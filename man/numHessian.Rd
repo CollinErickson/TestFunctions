@@ -8,6 +8,8 @@ numHessian(func, ...)
 }
 \arguments{
 \item{func}{Function to get hessian of}
+
+\item{...}{Arguments passed to numDeriv::hessian().}
 }
 \value{
 A hessian function

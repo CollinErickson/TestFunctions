@@ -7,7 +7,9 @@
 numGrad(func, ...)
 }
 \arguments{
-\item{func}{Function to get gradient of}
+\item{func}{Function to get gradient of.}
+
+\item{...}{Arguments passed to numDeriv::grad().}
 }
 \value{
 A gradient function
