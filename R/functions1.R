@@ -424,7 +424,7 @@ TF_ackley <- function(x, a=20, b=0.2, c=2*pi) {
 #' @examples
 #' piston(runif(7))
 #' piston(matrix(runif(7*20),ncol=7))
-piston <- function(x, scale_it=T, scale_low = c(30,.005,.002,1e3,9e4,290,340), scale_high = c(60,.02,.01,5e3,11e4,296,360), noise=0, a=20, b=0.2, c=2*pi) {
+piston <- function(x, scale_it=T, scale_low = c(30,.005,.002,1e3,9e4,290,340), scale_high = c(60,.02,.01,5e3,11e4,296,360)) {
   test_func_apply(func=TF_piston, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 
@@ -449,4 +449,40 @@ TF_piston <- function(x) {
   V <- S/(2*k) * (sqrt(A^2+4*k*P0*V0/T0*Ta) - A)
   C <- 2*pi * sqrt(M / (k + S^2*P0*V0/T0*Ta/V^2))
   C
+}
+
+
+
+#' wingweight: Wing weight function.
+#' 10 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' wingweight(runif(10))
+#' wingweight(matrix(runif(10*20),ncol=10))
+wingweight <- function(x, scale_it=T, scale_low = c(150,220,6,-10,16,.5,.08,2.5,1700,.025), scale_high = c(200,300,10,10,45,1,.18,6,2500,.08), noise=0) {
+  test_func_apply(func=TF_wingweight, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
+}
+
+#' TF_wingweight: Wing weight function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_wingweight(c(150,220,6,-10,16,.5,.08,2.5,1700,.025)) # minimum of zero, hard to solve
+TF_wingweight <- function(x) {
+  Sw <- x[1]
+  Wfw <- x[2]
+  A <- x[3]
+  Lambda <- x[4] * pi / 180 # convert degrees to radians
+  q <- x[5]
+  lambda <- x[6]
+  tc <- x[7]
+  Nz <- x[8]
+  Wdg <- x[9]
+  Wp <- x[10]
+  0.036 * Sw^.758 * Wfw^.0035 * (A/cos(Lambda)^2)^.6 * q^.006 * lambda^.04 * (100*tc/cos(Lambda))^-.3 * (Nz*Wdg)^.49 + Sw*Wp
 }
