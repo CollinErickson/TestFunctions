@@ -18,6 +18,7 @@
 \alias{sqrtsin}
 \alias{test_func_apply}
 \alias{waterfall}
+\alias{welch}
 \alias{wingweight}
 \alias{zhou1998}
 \title{Test function.}
@@ -74,10 +75,11 @@ ackley(x, scale_it = T, scale_low = -32.768, scale_high = 32.768,
 piston(x, scale_it = T, scale_low = c(30, 0.005, 0.002, 1000, 90000, 290,
   340), scale_high = c(60, 0.02, 0.01, 5000, 110000, 296, 360), noise = 0)
 
-wingweight(x, scale_it = T, scale_low = c(-0.5), scale_high = c(0.5),
-  noise = 0)
+wingweight(x, scale_it = T, scale_low = c(150, 220, 6, -10, 16, 0.5, 0.08,
+  2.5, 1700, 0.025), scale_high = c(200, 300, 10, 10, 45, 1, 0.18, 6, 2500,
+  0.08), noise = 0)
 
-wingweight(x, scale_it = T, scale_low = c(-0.5), scale_high = c(0.5),
+welch(x, scale_it = T, scale_low = c(-0.5), scale_high = c(0.5),
   noise = 0)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)

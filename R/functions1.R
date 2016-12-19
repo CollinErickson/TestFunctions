@@ -497,7 +497,7 @@ TF_wingweight <- function(x) {
 #' @examples
 #' welch(runif(20))
 #' welch(matrix(runif(20*20),ncol=20))
-wingweight <- function(x, scale_it=T, scale_low = c(-.5), scale_high = c(.5), noise=0) {
+welch <- function(x, scale_it=T, scale_low = c(-.5), scale_high = c(.5), noise=0) {
   test_func_apply(func=TF_welch, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 
