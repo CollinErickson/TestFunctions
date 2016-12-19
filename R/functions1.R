@@ -424,7 +424,7 @@ TF_ackley <- function(x, a=20, b=0.2, c=2*pi) {
 #' @examples
 #' piston(runif(7))
 #' piston(matrix(runif(7*20),ncol=7))
-piston <- function(x, scale_it=T, scale_low = c(30,.005,.002,1e3,9e4,290,340), scale_high = c(60,.02,.01,5e3,11e4,296,360)) {
+piston <- function(x, scale_it=T, scale_low = c(30,.005,.002,1e3,9e4,290,340), scale_high = c(60,.02,.01,5e3,11e4,296,360), noise=0) {
   test_func_apply(func=TF_piston, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 
@@ -485,4 +485,35 @@ TF_wingweight <- function(x) {
   Wdg <- x[9]
   Wp <- x[10]
   0.036 * Sw^.758 * Wfw^.0035 * (A/cos(Lambda)^2)^.6 * q^.006 * lambda^.04 * (100*tc/cos(Lambda))^-.3 * (Nz*Wdg)^.49 + Sw*Wp
+}
+
+
+
+
+#' welch: Welch et al (1992) function.
+#' 20 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' welch(runif(20))
+#' welch(matrix(runif(20*20),ncol=20))
+wingweight <- function(x, scale_it=T, scale_low = c(-.5), scale_high = c(.5), noise=0) {
+  test_func_apply(func=TF_welch, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
+}
+
+#' TF_welch: Welch function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_welch(rep(0,20)) # minimum of zero, hard to solve
+TF_welch <- function(x) {
+  5*x[12]/(1+x[1]) + 5*(x[4]-x[20])^2 + x[5] + 40*x[19]^3 +
+    -5*x[19] + .05*x[2] + .08*x[3] - .03*x[6] +
+    .03*x[7] - .09*x[9] - .01*x[10] - .07*x[11] +
+    .25*x[13]^2 - .04*x[14] + .06*x[15] +
+    -.01*x[17] - .03*x[18]
 }

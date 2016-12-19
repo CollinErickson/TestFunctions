@@ -72,11 +72,13 @@ ackley(x, scale_it = T, scale_low = -32.768, scale_high = 32.768,
   noise = 0, a = 20, b = 0.2, c = 2 * pi)
 
 piston(x, scale_it = T, scale_low = c(30, 0.005, 0.002, 1000, 90000, 290,
-  340), scale_high = c(60, 0.02, 0.01, 5000, 110000, 296, 360))
+  340), scale_high = c(60, 0.02, 0.01, 5000, 110000, 296, 360), noise = 0)
 
-wingweight(x, scale_it = T, scale_low = c(150, 220, 6, -10, 16, 0.5, 0.08,
-  2.5, 1700, 0.025), scale_high = c(200, 300, 10, 10, 45, 1, 0.18, 6, 2500,
-  0.08), noise = 0)
+wingweight(x, scale_it = T, scale_low = c(-0.5), scale_high = c(0.5),
+  noise = 0)
+
+wingweight(x, scale_it = T, scale_low = c(-0.5), scale_high = c(0.5),
+  noise = 0)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -168,6 +170,9 @@ piston: Piston simulation function.
 wingweight: Wing weight function.
 10 dimensional function.
 
+welch: Welch et al (1992) function.
+20 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -204,6 +209,8 @@ piston(runif(7))
 piston(matrix(runif(7*20),ncol=7))
 wingweight(runif(10))
 wingweight(matrix(runif(10*20),ncol=10))
+welch(runif(20))
+welch(matrix(runif(20*20),ncol=20))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
