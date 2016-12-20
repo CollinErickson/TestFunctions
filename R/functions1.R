@@ -517,3 +517,37 @@ TF_welch <- function(x) {
     .25*x[13]^2 - .04*x[14] + .06*x[15] +
     -.01*x[17] - .03*x[18]
 }
+
+
+
+
+
+
+#' robotarm: Robot arm function.
+#' 8 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' robotarm(runif(8))
+#' robotarm(matrix(runif(8*20),ncol=8))
+robotarm <- function(x, scale_it=T, scale_low = rep(0,8), scale_high = c(rep(2*pi,4),rep(1,4)), noise=0) {
+  test_func_apply(func=TF_robotarm, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
+}
+
+#' TF_robotarm: Robot arm function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_robotarm(rep(0,8))
+#' TF_robotarm(rep(1,8))
+TF_robotarm <- function(x) {
+  theta <- x[1:4]
+  L <- x[5:8]
+  u <- sum(L * cos(cumsum(theta)))
+  v <- sum(L * sin(cumsum(theta)))
+  sqrt(u^2 + v^2)
+}
