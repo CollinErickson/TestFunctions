@@ -16,5 +16,6 @@ LazyData: TRUE
 RoxygenNote: 5.0.1
 Suggests: knitr,
     rmarkdown,
-    numDeriv
+    numDeriv,
+    cf
 VignetteBuilder: knitr
