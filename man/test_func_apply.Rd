@@ -4,6 +4,7 @@
 \alias{GoldsteinPrice}
 \alias{GoldsteinPriceLog}
 \alias{OTL_Circuit}
+\alias{RoosArnold}
 \alias{ackley}
 \alias{banana}
 \alias{borehole}
@@ -85,6 +86,8 @@ welch(x, scale_it = T, scale_low = c(-0.5), scale_high = c(0.5),
 
 robotarm(x, scale_it = T, scale_low = rep(0, 8), scale_high = c(rep(2 *
   pi, 4), rep(1, 4)), noise = 0)
+
+RoosArnold(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -182,6 +185,9 @@ welch: Welch et al (1992) function.
 robotarm: Robot arm function.
 8 dimensional function.
 
+RoosArnold: Roos & Arnold (1963) function.
+d dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -222,6 +228,8 @@ welch(runif(20))
 welch(matrix(runif(20*20),ncol=20))
 robotarm(runif(8))
 robotarm(matrix(runif(8*20),ncol=8))
+RoosArnold(runif(8))
+RoosArnold(matrix(runif(8*20),ncol=8))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)

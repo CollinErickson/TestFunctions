@@ -551,3 +551,32 @@ TF_robotarm <- function(x) {
   v <- sum(L * sin(cumsum(theta)))
   sqrt(u^2 + v^2)
 }
+
+
+
+
+
+#' RoosArnold: Roos & Arnold (1963) function.
+#' d dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' RoosArnold(runif(8))
+#' RoosArnold(matrix(runif(8*20),ncol=8))
+RoosArnold <- function(x, scale_it=F, scale_low = 0, scale_high = 1, noise=0) {
+  test_func_apply(func=TF_RoosArnold, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
+}
+
+#' TF_RoosArnold: Roos & Arnold (1963) function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_RoosArnold(rep(0,8))
+#' TF_RoosArnold(rep(1,8))
+TF_RoosArnold <- function(x) {
+  prod(abs(4*x-2))
+}
