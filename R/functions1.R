@@ -580,3 +580,32 @@ RoosArnold <- function(x, scale_it=F, scale_low = 0, scale_high = 1, noise=0) {
 TF_RoosArnold <- function(x) {
   prod(abs(4*x-2))
 }
+
+
+
+
+
+#' Gfunction: G-function
+#' d dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' Gfunction(runif(8))
+#' Gfunction(matrix(runif(8*20),ncol=8))
+Gfunction <- function(x, scale_it=F, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_Gfunction, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_Gfunction: G-function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_Gfunction(rep(0,8))
+#' TF_Gfunction(rep(1,8))
+TF_Gfunction <- function(x, a=(1:length(x)-1)/2) {
+  prod((abs(4*x-2) + a) / (1 + a))
+}
