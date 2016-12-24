@@ -609,3 +609,35 @@ Gfunction <- function(x, scale_it=F, scale_low = 0, scale_high = 1, noise=0, ...
 TF_Gfunction <- function(x, a=(1:length(x)-1)/2) {
   prod((abs(4*x-2) + a) / (1 + a))
 }
+
+
+
+
+
+
+#' beale: Beale function
+#' 2 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' beale(runif(2))
+#' beale(matrix(runif(2*20),ncol=2))
+beale <- function(x, scale_it=T, scale_low = -4.5, scale_high = 4.5, noise=0, ...) {
+  test_func_apply(func=TF_beale, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_beale: Beale function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_beale(rep(0,2))
+#' TF_beale(rep(1,2))
+TF_beale <- function(x) {
+  (1.5-x[1]+x[1]*x[2])^2 +
+    (2.25-x[1]+x[1]*x[2]^2)^2 +
+    (2.625 - x[1] + x[1]*x[2]^3)^2
+}

@@ -8,6 +8,7 @@
 \alias{RoosArnold}
 \alias{ackley}
 \alias{banana}
+\alias{beale}
 \alias{borehole}
 \alias{branin}
 \alias{currin1991}
@@ -91,6 +92,9 @@ robotarm(x, scale_it = T, scale_low = rep(0, 8), scale_high = c(rep(2 *
 RoosArnold(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0)
 
 Gfunction(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0,
+  ...)
+
+beale(x, scale_it = T, scale_low = -4.5, scale_high = 4.5, noise = 0,
   ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
@@ -195,6 +199,9 @@ d dimensional function.
 Gfunction: G-function
 d dimensional function.
 
+beale: Beale function
+2 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -239,6 +246,8 @@ RoosArnold(runif(8))
 RoosArnold(matrix(runif(8*20),ncol=8))
 Gfunction(runif(8))
 Gfunction(matrix(runif(8*20),ncol=8))
+beale(runif(2))
+beale(matrix(runif(2*20),ncol=2))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
