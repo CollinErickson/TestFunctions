@@ -8,6 +8,8 @@ TF_Gfunction(x, a = (1:length(x) - 1)/2)
 }
 \arguments{
 \item{x}{Input vector at which to evaluate.}
+
+\item{a}{Parameter for Gfunction}
 }
 \value{
 Function output evaluated at x.

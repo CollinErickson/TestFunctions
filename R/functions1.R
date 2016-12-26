@@ -599,6 +599,7 @@ Gfunction <- function(x, scale_it=F, scale_low = 0, scale_high = 1, noise=0, ...
 #' TF_Gfunction: G-function for evaluating a single point.
 #'
 #' @param x Input vector at which to evaluate.
+#' @param a Parameter for Gfunction
 #'
 #' @return Function output evaluated at x.
 #' @export
@@ -640,4 +641,35 @@ TF_beale <- function(x) {
   (1.5-x[1]+x[1]*x[2])^2 +
     (2.25-x[1]+x[1]*x[2]^2)^2 +
     (2.625 - x[1] + x[1]*x[2]^3)^2
+}
+
+
+
+
+
+
+
+#' easom: Easom function
+#' 2 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' easom(runif(2))
+#' easom(matrix(runif(2*20),ncol=2))
+easom <- function(x, scale_it=T, scale_low = -4.5, scale_high = 4.5, noise=0, ...) {
+  test_func_apply(func=TF_easom, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_easom: Easom function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_easom(rep(0,2))
+#' TF_easom(rep(1,2))
+TF_easom <- function(x) {
+  -cos(x[1]) * cos(x[2]) * exp(-(x[1]-pi)^2 - (x[2]-pi)^2)
 }
