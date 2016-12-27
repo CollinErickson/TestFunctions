@@ -673,3 +673,35 @@ easom <- function(x, scale_it=T, scale_low = -4.5, scale_high = 4.5, noise=0, ..
 TF_easom <- function(x) {
   -cos(x[1]) * cos(x[2]) * exp(-(x[1]-pi)^2 - (x[2]-pi)^2)
 }
+
+
+
+
+
+
+
+
+#' griewank: Griewank function
+#' n dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' griewank(runif(2))
+#' griewank(matrix(runif(2*20),ncol=2))
+griewank <- function(x, scale_it=T, scale_low = -600, scale_high = 600, noise=0, ...) {
+  test_func_apply(func=TF_griewank, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_griewank: Griewank function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_griewank(rep(0,2))
+#' TF_griewank(rep(1,2))
+TF_griewank <- function(x) {
+  sum(x^2) / 400 - prod(cos(x/sqrt(1:length(x)))) + 1
+}
