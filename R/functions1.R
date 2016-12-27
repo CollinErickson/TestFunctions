@@ -705,3 +705,36 @@ griewank <- function(x, scale_it=T, scale_low = -600, scale_high = 600, noise=0,
 TF_griewank <- function(x) {
   sum(x^2) / 400 - prod(cos(x/sqrt(1:length(x)))) + 1
 }
+
+
+
+
+
+
+
+
+
+#' hump: Hump function
+#' 2 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' hump(runif(2))
+#' hump(matrix(runif(2*20),ncol=2))
+hump <- function(x, scale_it=T, scale_low = -5, scale_high = 5, noise=0, ...) {
+  test_func_apply(func=TF_hump, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_hump: Hump function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_hump(rep(0,2))
+#' TF_hump(rep(1,2))
+TF_hump <- function(x) {
+  1.0316285 + 4*x[1]^2 -2.1*x[1]^4 + x[1]^6/3 + x[1]*x[2] - 4*x[2]^2 + 4*x[2]^4
+}
