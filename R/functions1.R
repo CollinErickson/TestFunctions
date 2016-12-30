@@ -738,3 +738,41 @@ hump <- function(x, scale_it=T, scale_low = -5, scale_high = 5, noise=0, ...) {
 TF_hump <- function(x) {
   1.0316285 + 4*x[1]^2 -2.1*x[1]^4 + x[1]^6/3 + x[1]*x[2] - 4*x[2]^2 + 4*x[2]^4
 }
+
+
+
+
+
+
+
+
+
+
+#' levy: Levy function
+#' n dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' levy(runif(2))
+#' levy(matrix(runif(2*20),ncol=2))
+levy <- function(x, scale_it=T, scale_low = -10, scale_high = 10, noise=0, ...) {
+  test_func_apply(func=TF_levy, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_levy: Levy function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_levy(rep(0,2))
+#' TF_levy(rep(1,2))
+TF_levy <- function(x) {
+  w <- 1 + (x-1) / 4
+  d <- length(w)
+  sin(pi*w[1])^2 +
+    sum((w[-d] - 1)^2 * (1 + 10*sin(pi*w[-d]+1)^2)) +
+    (w[d]-1)^2 * (1 + sin(2*pi*w[d])^2)
+}

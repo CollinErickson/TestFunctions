@@ -17,6 +17,7 @@
 \alias{gaussian1}
 \alias{griewank}
 \alias{hump}
+\alias{levy}
 \alias{lim2002}
 \alias{piston}
 \alias{powsin}
@@ -107,6 +108,8 @@ griewank(x, scale_it = T, scale_low = -600, scale_high = 600, noise = 0,
   ...)
 
 hump(x, scale_it = T, scale_low = -5, scale_high = 5, noise = 0, ...)
+
+levy(x, scale_it = T, scale_low = -10, scale_high = 10, noise = 0, ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -222,6 +225,9 @@ n dimensional function.
 hump: Hump function
 2 dimensional function.
 
+levy: Levy function
+n dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -274,6 +280,8 @@ griewank(runif(2))
 griewank(matrix(runif(2*20),ncol=2))
 hump(runif(2))
 hump(matrix(runif(2*20),ncol=2))
+levy(runif(2))
+levy(matrix(runif(2*20),ncol=2))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
