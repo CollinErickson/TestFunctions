@@ -19,6 +19,7 @@
 \alias{hump}
 \alias{levy}
 \alias{lim2002}
+\alias{michalewicz}
 \alias{piston}
 \alias{powsin}
 \alias{robotarm}
@@ -110,6 +111,9 @@ griewank(x, scale_it = T, scale_low = -600, scale_high = 600, noise = 0,
 hump(x, scale_it = T, scale_low = -5, scale_high = 5, noise = 0, ...)
 
 levy(x, scale_it = T, scale_low = -10, scale_high = 10, noise = 0, ...)
+
+michalewicz(x, scale_it = T, scale_low = 0, scale_high = pi, noise = 0,
+  ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -228,6 +232,9 @@ hump: Hump function
 levy: Levy function
 n dimensional function.
 
+michalewicz: Michalewicz function
+n dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -282,6 +289,8 @@ hump(runif(2))
 hump(matrix(runif(2*20),ncol=2))
 levy(runif(2))
 levy(matrix(runif(2*20),ncol=2))
+michalewicz(runif(2))
+michalewicz(matrix(runif(2*20),ncol=2))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)

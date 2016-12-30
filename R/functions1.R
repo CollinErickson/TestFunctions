@@ -776,3 +776,38 @@ TF_levy <- function(x) {
     sum((w[-d] - 1)^2 * (1 + 10*sin(pi*w[-d]+1)^2)) +
     (w[d]-1)^2 * (1 + sin(2*pi*w[d])^2)
 }
+
+
+
+
+
+
+
+
+
+
+
+#' michalewicz: Michalewicz function
+#' n dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' michalewicz(runif(2))
+#' michalewicz(matrix(runif(2*20),ncol=2))
+michalewicz <- function(x, scale_it=T, scale_low = 0, scale_high = pi, noise=0, ...) {
+  test_func_apply(func=TF_michalewicz, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_michalewicz: Michalewicz function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_michalewicz(rep(0,2))
+#' TF_michalewicz(rep(1,2))
+TF_michalewicz <- function(x, m=10) {
+  -sum(sin(x) * sin(1:length(x) * x^2 / pi)^(2*m))
+}
