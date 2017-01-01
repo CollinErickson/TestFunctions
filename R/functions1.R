@@ -811,3 +811,39 @@ michalewicz <- function(x, scale_it=T, scale_low = 0, scale_high = pi, noise=0, 
 TF_michalewicz <- function(x, m=10) {
   -sum(sin(x) * sin(1:length(x) * x^2 / pi)^(2*m))
 }
+
+
+
+
+
+
+
+
+
+
+
+
+#' rastrigin: Rastrigin function
+#' n dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' rastrigin(runif(2))
+#' rastrigin(matrix(runif(2*20),ncol=2))
+rastrigin <- function(x, scale_it=T, scale_low = -5.12, scale_high = 5.12, noise=0, ...) {
+  test_func_apply(func=TF_rastrigin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_rastrigin: Rastrigin function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_rastrigin(rep(0,2))
+#' TF_rastrigin(rep(1,2))
+TF_rastrigin <- function(x, m=10) {
+  10*length(x) + sum(x^2 - 10*cos(2*pi*x))
+}
