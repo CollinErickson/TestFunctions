@@ -20,6 +20,7 @@
 \alias{levy}
 \alias{lim2002}
 \alias{michalewicz}
+\alias{moon_high}
 \alias{piston}
 \alias{powsin}
 \alias{rastrigin}
@@ -118,6 +119,9 @@ michalewicz(x, scale_it = T, scale_low = 0, scale_high = pi, noise = 0,
 
 rastrigin(x, scale_it = T, scale_low = -5.12, scale_high = 5.12,
   noise = 0, ...)
+
+moon_high(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0,
+  ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -242,6 +246,9 @@ n dimensional function.
 rastrigin: Rastrigin function
 n dimensional function.
 
+moon_high: Moon (2010) high-dimensional function for screening
+20 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -300,6 +307,8 @@ michalewicz(runif(2))
 michalewicz(matrix(runif(2*20),ncol=2))
 rastrigin(runif(2))
 rastrigin(matrix(runif(2*20),ncol=2))
+moon_high(runif(20))
+moon_high(matrix(runif(20*20),ncol=20))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
