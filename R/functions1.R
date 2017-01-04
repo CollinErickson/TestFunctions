@@ -901,3 +901,33 @@ TF_moon_high <- function(x) {
 
   sum(coeff_linear * x) + sum(coeff_quadratic * x%*%t(x))
 }
+
+
+
+
+
+
+#' linkletter_nosignal: Linkletter (2006) no signal function, just returns zero
+#' d dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' linkletter_nosignal(runif(2))
+#' linkletter_nosignal(matrix(runif(2*20),ncol=2))
+linkletter_nosignal <- function(x, scale_it=F, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_linkletter_nosignal, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_linkletter_nosignal: Linkletter (2006) no signal function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_linkletter_nosignal(rep(0,2))
+#' TF_linkletter_nosignal(rep(1,2))
+TF_linkletter_nosignal <- function(x) {
+  0
+}
