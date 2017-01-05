@@ -4,7 +4,7 @@
 \alias{TF_rastrigin}
 \title{TF_rastrigin: Rastrigin function for evaluating a single point.}
 \usage{
-TF_rastrigin(x, m = 10)
+TF_rastrigin(x)
 }
 \arguments{
 \item{x}{Input vector at which to evaluate.}

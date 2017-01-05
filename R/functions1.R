@@ -801,6 +801,7 @@ michalewicz <- function(x, scale_it=T, scale_low = 0, scale_high = pi, noise=0, 
 #' TF_michalewicz: Michalewicz function for evaluating a single point.
 #'
 #' @param x Input vector at which to evaluate.
+#' @param m Parameter for the michalewicz function
 #'
 #' @return Function output evaluated at x.
 #' @export
@@ -844,7 +845,7 @@ rastrigin <- function(x, scale_it=T, scale_low = -5.12, scale_high = 5.12, noise
 #' @examples
 #' TF_rastrigin(rep(0,2))
 #' TF_rastrigin(rep(1,2))
-TF_rastrigin <- function(x, m=10) {
+TF_rastrigin <- function(x) {
   10*length(x) + sum(x^2 - 10*cos(2*pi*x))
 }
 

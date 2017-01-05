@@ -8,6 +8,8 @@ TF_michalewicz(x, m = 10)
 }
 \arguments{
 \item{x}{Input vector at which to evaluate.}
+
+\item{m}{Parameter for the michalewicz function}
 }
 \value{
 Function output evaluated at x.
