@@ -932,3 +932,50 @@ linkletter_nosignal <- function(x, scale_it=F, scale_low = 0, scale_high = 1, no
 TF_linkletter_nosignal <- function(x) {
   0
 }
+
+
+
+
+
+
+
+
+#' Morris: Morris function
+#' 20 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' morris(runif(2))
+#' morris(matrix(runif(2*20),ncol=2))
+morris <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_morris, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_morris: morris function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @references http://www.abe.ufl.edu/jjones/ABE_5646/2010/Morris.1991%20SA%20paper.pdf
+#' @examples
+#' TF_morris(rep(0,20))
+#' TF_morris(rep(1,20))
+TF_morris <- function(x) {
+  beta1 <- (-1)^(1:20)
+  beta1[1:10] <- 20
+  beta2 <- outer(1:20,1:20,Vectorize(function(i,j) {if (i<j) (-1)^(i+j) else 0}))
+  beta2[1:6, 1:6] <- -15
+  beta3 <- array(0, c(20,20,20))
+  for (i in 1:3) {
+    for (j in (i+1):4) {
+      for (k in (j+1):5) {
+        beta3[i, j, k] <- -10
+      }
+    }
+  }
+  w <- 2*(x-.5)
+  w[c(3,5,7)] <- 2*(1.1*x[c(3,5,7)]/(x[c(3,5,7)]+.1) - .5)
+  sum(beta1 * w) + sum(beta2 * outer(w, w)) + sum(beta3 * outer(w, outer(w, w))) + 5*prod(w[1:4])
+}
