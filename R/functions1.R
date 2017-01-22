@@ -967,15 +967,48 @@ TF_morris <- function(x) {
   beta1[1:10] <- 20
   beta2 <- outer(1:20,1:20,Vectorize(function(i,j) {if (i<j) (-1)^(i+j) else 0}))
   beta2[1:6, 1:6] <- -15
-  beta3 <- array(0, c(20,20,20))
-  for (i in 1:3) {
-    for (j in (i+1):4) {
-      for (k in (j+1):5) {
-        beta3[i, j, k] <- -10
-      }
-    }
-  }
+  #beta3 <- array(0, c(20,20,20)) # Changed it to be 10x faster below since most terms are zero and outer is slow
+  #for (i in 1:3) {
+  #  for (j in (i+1):4) {
+  #    for (k in (j+1):5) {
+  #      beta3[i, j, k] <- -10
+  #    }
+  #  }
+  #}
   w <- 2*(x-.5)
   w[c(3,5,7)] <- 2*(1.1*x[c(3,5,7)]/(x[c(3,5,7)]+.1) - .5)
-  sum(beta1 * w) + sum(beta2 * outer(w, w)) + sum(beta3 * outer(w, outer(w, w))) + 5*prod(w[1:4])
+  t3 <- -10 * sum(w[1]*(w[2]*w[3] + w[2]*w[4] + w[2]*w[5] + w[3]*w[4] + w[3]*w[5] + w[4]*w[5]) +
+                    w[2]*(w[3]*w[4] + w[3]*w[5] + w[4]*w[5]) +
+                    w[3]*w[4]*w[5])
+  #sum(beta1 * w) + sum(beta2 * outer(w, w)) + sum(beta3 * outer(w, outer(w, w))) + 5*prod(w[1:4])
+  sum(beta1 * w) + sum(beta2 * outer(w, w)) + t3 + 5*prod(w[1:4])
+}
+
+
+
+#' detpep8d: detpep8d function
+#' 8 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' detpep8d(runif(2))
+#' detpep8d(matrix(runif(2*20),ncol=2))
+#' @references
+#' http://www.tandfonline.com/doi/pdf/10.1198/TECH.2010.09157?needAccess=true
+detpep8d <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_detpep8d, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_detpep8d: detpep8d function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_detpep8d(rep(0,2))
+#' TF_detpep8d(rep(1,2))
+TF_detpep8d <- function(x) {
+  4*(x[1]-2+8*x[2]-8*x[2]^2)^2 + (3-4*x[2])^2 + 16*sqrt(x[3]+1)*(2*x[3]-1)^2 + sum((4:8) * log(1 + x[3] + cumsum(x[4:8])))
 }

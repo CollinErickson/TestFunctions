@@ -12,6 +12,7 @@
 \alias{borehole}
 \alias{branin}
 \alias{currin1991}
+\alias{detpep8d}
 \alias{easom}
 \alias{franke}
 \alias{gaussian1}
@@ -129,6 +130,8 @@ linkletter_nosignal(x, scale_it = F, scale_low = 0, scale_high = 1,
   noise = 0, ...)
 
 morris(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
+
+detpep8d(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -262,6 +265,9 @@ d dimensional function.
 Morris: Morris function
 20 dimensional function.
 
+detpep8d: detpep8d function
+8 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -326,9 +332,14 @@ linkletter_nosignal(runif(2))
 linkletter_nosignal(matrix(runif(2*20),ncol=2))
 morris(runif(2))
 morris(matrix(runif(2*20),ncol=2))
+detpep8d(runif(2))
+detpep8d(matrix(runif(2*20),ncol=2))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
 curve(sin(2*pi*x), col=2, add=TRUE)
+}
+\references{
+http://www.tandfonline.com/doi/pdf/10.1198/TECH.2010.09157?needAccess=true
 }
 
