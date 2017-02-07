@@ -17,6 +17,7 @@
 \alias{franke}
 \alias{gaussian1}
 \alias{griewank}
+\alias{hartmann}
 \alias{hump}
 \alias{levy}
 \alias{lim2002}
@@ -132,6 +133,8 @@ linkletter_nosignal(x, scale_it = F, scale_low = 0, scale_high = 1,
 morris(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
 detpep8d(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
+
+hartmann(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0, ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -268,6 +271,9 @@ Morris: Morris function
 detpep8d: detpep8d function
 8 dimensional function.
 
+hartmann: hartmann function
+6 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -330,10 +336,12 @@ moon_high(runif(20))
 moon_high(matrix(runif(20*20),ncol=20))
 linkletter_nosignal(runif(2))
 linkletter_nosignal(matrix(runif(2*20),ncol=2))
-morris(runif(2))
-morris(matrix(runif(2*20),ncol=2))
+morris(runif(20))
+morris(matrix(runif(20*20),ncol=20))
 detpep8d(runif(2))
 detpep8d(matrix(runif(2*20),ncol=2))
+hartmann(runif(2))
+hartmann(matrix(runif(6*20),ncol=6))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)

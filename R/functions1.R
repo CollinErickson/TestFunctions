@@ -945,8 +945,8 @@ TF_linkletter_nosignal <- function(x) {
 #' @export
 #' @rdname test_func_apply
 #' @examples
-#' morris(runif(2))
-#' morris(matrix(runif(2*20),ncol=2))
+#' morris(runif(20))
+#' morris(matrix(runif(20*20),ncol=20))
 morris <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
   test_func_apply(func=TF_morris, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
 }
@@ -1011,4 +1011,45 @@ detpep8d <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...)
 #' TF_detpep8d(rep(1,2))
 TF_detpep8d <- function(x) {
   4*(x[1]-2+8*x[2]-8*x[2]^2)^2 + (3-4*x[2])^2 + 16*sqrt(x[3]+1)*(2*x[3]-1)^2 + sum((4:8) * log(1 + x[3] + cumsum(x[4:8])))
+}
+
+
+
+
+
+#' hartmann: hartmann function
+#' 6 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' hartmann(runif(2))
+#' hartmann(matrix(runif(6*20),ncol=6))
+hartmann <- function(x, scale_it=F, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_hartmann, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_hartmann: hartmann function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_hartmann(rep(0,6))
+#' TF_hartmann(rep(1,6))
+#' TF_hartmann(c(.20169, .150011, .476874, .275332, .311652, .6573)) # Global minimum of -3.322368
+TF_hartmann <- function(x) {#browser()
+  alpha <- c(1, 1.2, 3, 3.2)
+  A <- matrix(c(10,3,17,3.5,1.7,8,
+                .05,10,17,.1,8,14,
+                3,3.5,1.7,10,17,8,
+                17,8,.05,10,.1,14),
+              nrow=4, ncol=6, byrow=T)
+  P <- 1e-4*matrix(c(1312,1696,5569, 124,8283,5886,
+                     2329,4135,8307,3736,1004,9991,
+                     2348,1451,3522,2883,3047,6650,
+                     4047,8828,8732,5743,1091, 381),
+                   nrow=4,ncol=6,byrow=T)
+  -sum(alpha * exp(-rowSums(A * sweep(P, 2, x)^2)))
 }
