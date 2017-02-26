@@ -348,6 +348,8 @@ plot(x,y)
 curve(sin(2*pi*x), col=2, add=TRUE)
 }
 \references{
+http://www.abe.ufl.edu/jjones/ABE_5646/2010/Morris.1991%20SA%20paper.pdf
+
 http://www.tandfonline.com/doi/pdf/10.1198/TECH.2010.09157?needAccess=true
 }
 

@@ -944,6 +944,7 @@ TF_linkletter_nosignal <- function(x) {
 #' 20 dimensional function.
 #' @export
 #' @rdname test_func_apply
+#' @references http://www.abe.ufl.edu/jjones/ABE_5646/2010/Morris.1991%20SA%20paper.pdf
 #' @examples
 #' morris(runif(20))
 #' morris(matrix(runif(20*20),ncol=20))
