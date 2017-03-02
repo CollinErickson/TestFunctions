@@ -21,7 +21,6 @@ Allows you to easily change an existing function to include linear terms.
 }
 \examples{
 banana(c(.1,.2))
-# banana(c(.1,.2,.4,.5,.6,.7,.8)) # gives warning
 add_linear_terms(banana, coeffs=c(10,1000))(c(.1,.2))
 }
 

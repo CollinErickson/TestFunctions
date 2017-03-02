@@ -9,7 +9,6 @@
 #'
 #' @examples
 #' banana(c(.1,.2))
-#' # banana(c(.1,.2,.4,.5,.6,.7,.8)) # gives warning
 #' add_linear_terms(banana, coeffs=c(10,1000))(c(.1,.2))
 add_linear_terms <- function(func, coeffs) {
   function(X, ...) {
