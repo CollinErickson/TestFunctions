@@ -12,17 +12,15 @@
 #' @examples
 #' banana(c(.5,.85))
 #' add_zoom(banana, c(0,.5), c(1,1))(c(.5,.7))
+#' add_zoom(banana, c(.2,.5), c(.8,1))(matrix(c(.5,.7),ncol=2))
 #' cf::cf(banana)
 #' cf::cf(add_zoom(banana, c(0,.5), c(1,1)))
 #' cf::cf(add_zoom(banana, c(.2,.5), c(.8,1)))
 add_zoom <- function(func, scale_low, scale_high) {
   function(X, ...) {
     if (is.matrix(X)) {
-      X_scaled <- sweep(X=X, MARGIN=2,
-                        STATS=scale_high-scale_low,
-                        FUN = '*') #x * (scale_high - scale_low) + scale_low
-      X_scaled <- sweep(X=X_scaled, MARGIN=2,
-                        STATS=scale_low)
+      X_scaled <- sweep(X, 2, scale_high-scale_low,'*') #x * (scale_high - scale_low) + scale_low
+      X_scaled <- sweep(X_scaled, 2, scale_low, '+')
     } else {
       X_scaled <- X * (scale_high - scale_low) + scale_low
     }
