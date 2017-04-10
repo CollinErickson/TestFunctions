@@ -1054,3 +1054,60 @@ TF_hartmann <- function(x) {#browser()
                    nrow=4,ncol=6,byrow=T)
   -sum(alpha * exp(-rowSums(A * sweep(P, 2, x)^2)))
 }
+
+
+#' quad_peaks: quad_peaks function
+#' 2 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' quad_peaks(runif(2))
+#' quad_peaks(matrix(runif(2*20),ncol=2))
+quad_peaks <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_quad_peaks, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_quad_peaks: quad_peaks function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_quad_peaks(rep(0,2))
+#' TF_quad_peaks(rep(1,2))
+TF_quad_peaks <- function(x) {
+  .2+.015*TestFunctions::add_zoom(
+    TestFunctions::rastrigin, scale_low = c(.4,.4), scale_high = c(.6,.6)
+  )(x)^.9
+}
+
+
+#' quad_peaks_slant: quad_peaks_slant function
+#' 2 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' quad_peaks_slant(runif(2))
+#' quad_peaks_slant(matrix(runif(2*20),ncol=2))
+quad_peaks_slant <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_quad_peaks_slant, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_quad_peaks_slant: quad_peaks_slant function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_quad_peaks_slant(rep(0,2))
+#' TF_quad_peaks_slant(rep(1,2))
+TF_quad_peaks_slant <- function(x) {
+  .2+.015*TestFunctions::add_zoom(
+    TestFunctions::rastrigin, scale_low = c(.4,.4), scale_high = c(.6,.6)
+  )(x)^.9 +
+    sum(c(.01,.01) * x)
+}

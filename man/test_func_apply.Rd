@@ -27,6 +27,8 @@
 \alias{morris}
 \alias{piston}
 \alias{powsin}
+\alias{quad_peaks}
+\alias{quad_peaks_slant}
 \alias{rastrigin}
 \alias{robotarm}
 \alias{sinumoid}
@@ -135,6 +137,12 @@ morris(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 detpep8d(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
 hartmann(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0, ...)
+
+quad_peaks(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
+  ...)
+
+quad_peaks_slant(x, scale_it = T, scale_low = 0, scale_high = 1,
+  noise = 0, ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -274,6 +282,12 @@ detpep8d: detpep8d function
 hartmann: hartmann function
 6 dimensional function.
 
+quad_peaks: quad_peaks function
+2 dimensional function.
+
+quad_peaks_slant: quad_peaks_slant function
+2 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -342,6 +356,10 @@ detpep8d(runif(2))
 detpep8d(matrix(runif(2*20),ncol=2))
 hartmann(runif(2))
 hartmann(matrix(runif(6*20),ncol=6))
+quad_peaks(runif(2))
+quad_peaks(matrix(runif(2*20),ncol=2))
+quad_peaks_slant(runif(2))
+quad_peaks_slant(matrix(runif(2*20),ncol=2))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
