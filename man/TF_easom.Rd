@@ -19,4 +19,3 @@ TF_easom: Easom function for evaluating a single point.
 TF_easom(rep(0,2))
 TF_easom(rep(1,2))
 }
-

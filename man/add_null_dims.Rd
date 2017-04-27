@@ -24,4 +24,3 @@ banana(c(.1,.2))
 # banana(c(.1,.2,.4,.5,.6,.7,.8)) # gives warning
 add_null_dims(banana, nact=2)(c(.1,.2,.4,.5,.6,.7,.8))
 }
-

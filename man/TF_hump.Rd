@@ -19,4 +19,3 @@ TF_hump: Hump function for evaluating a single point.
 TF_hump(rep(0,2))
 TF_hump(rep(1,2))
 }
-

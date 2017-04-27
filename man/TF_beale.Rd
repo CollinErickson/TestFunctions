@@ -19,4 +19,3 @@ TF_beale: Beale function for evaluating a single point.
 TF_beale(rep(0,2))
 TF_beale(rep(1,2))
 }
-

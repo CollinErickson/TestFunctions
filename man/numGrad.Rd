@@ -20,4 +20,3 @@ Create function calculating the numerical gradient
 \examples{
 numGrad(sin)
 }
-

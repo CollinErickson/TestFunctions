@@ -23,4 +23,3 @@ Allows you to easily change an existing function to include linear terms.
 banana(c(.1,.2))
 add_linear_terms(banana, coeffs=c(10,1000))(c(.1,.2))
 }
-

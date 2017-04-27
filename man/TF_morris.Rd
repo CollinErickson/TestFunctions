@@ -22,4 +22,3 @@ TF_morris(rep(1,20))
 \references{
 http://www.abe.ufl.edu/jjones/ABE_5646/2010/Morris.1991%20SA%20paper.pdf
 }
-

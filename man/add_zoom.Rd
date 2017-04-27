@@ -31,4 +31,3 @@ cf::cf(banana)
 cf::cf(add_zoom(banana, c(0,.5), c(1,1)))
 cf::cf(add_zoom(banana, c(.2,.5), c(.8,1)))
 }
-

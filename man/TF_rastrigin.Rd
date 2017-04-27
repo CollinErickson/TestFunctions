@@ -19,4 +19,3 @@ TF_rastrigin: Rastrigin function for evaluating a single point.
 TF_rastrigin(rep(0,2))
 TF_rastrigin(rep(1,2))
 }
-

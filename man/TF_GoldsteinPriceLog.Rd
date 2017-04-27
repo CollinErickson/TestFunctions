@@ -20,4 +20,3 @@ on a log scale, normalized to have mean 0 and variance 1.
 \examples{
 TF_GoldsteinPriceLog(c(0, -1)) # minimum
 }
-

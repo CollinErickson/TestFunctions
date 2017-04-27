@@ -23,4 +23,3 @@ add_noise: Adds noise to any function
 tf <- add_noise(function(x)sin(2*x*pi));curve(tf)
 tf <- add_noise(function(x)sin(2*x*pi), noise=.1);curve(tf)
 }
-

@@ -19,4 +19,3 @@ TF_detpep8d: detpep8d function for evaluating a single point.
 TF_detpep8d(rep(0,2))
 TF_detpep8d(rep(1,2))
 }
-

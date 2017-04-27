@@ -19,4 +19,3 @@ TF_robotarm: Robot arm function for evaluating a single point.
 TF_robotarm(rep(0,8))
 TF_robotarm(rep(1,8))
 }
-

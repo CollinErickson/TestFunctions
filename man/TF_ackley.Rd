@@ -24,4 +24,3 @@ TF_ackley: Ackley function for evaluating a single point.
 \examples{
 TF_ackley(c(0, 0)) # minimum of zero, hard to solve
 }
-

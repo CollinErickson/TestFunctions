@@ -18,4 +18,3 @@ TF_welch: Welch function for evaluating a single point.
 \examples{
 TF_welch(rep(0,20)) # minimum of zero, hard to solve
 }
-

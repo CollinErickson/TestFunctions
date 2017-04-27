@@ -19,4 +19,3 @@ TF_quad_peaks: quad_peaks function for evaluating a single point.
 TF_quad_peaks(rep(0,2))
 TF_quad_peaks(rep(1,2))
 }
-

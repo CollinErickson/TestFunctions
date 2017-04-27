@@ -19,4 +19,3 @@ TF_griewank: Griewank function for evaluating a single point.
 TF_griewank(rep(0,2))
 TF_griewank(rep(1,2))
 }
-

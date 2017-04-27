@@ -19,4 +19,3 @@ TF_linkletter_nosignal: Linkletter (2006) no signal function for evaluating a si
 TF_linkletter_nosignal(rep(0,2))
 TF_linkletter_nosignal(rep(1,2))
 }
-

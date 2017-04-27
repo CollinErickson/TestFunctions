@@ -19,4 +19,3 @@ TF_quad_peaks_slant: quad_peaks_slant function for evaluating a single point.
 TF_quad_peaks_slant(rep(0,2))
 TF_quad_peaks_slant(rep(1,2))
 }
-

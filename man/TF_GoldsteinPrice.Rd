@@ -18,4 +18,3 @@ TF_GoldsteinPrice: Goldstein Price function for evaluating a single point
 \examples{
 TF_GoldsteinPrice(c(0, -1)) # minimum
 }
-

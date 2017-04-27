@@ -21,4 +21,3 @@ TF_Gfunction: G-function for evaluating a single point.
 TF_Gfunction(rep(0,8))
 TF_Gfunction(rep(1,8))
 }
-

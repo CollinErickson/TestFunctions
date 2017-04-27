@@ -31,4 +31,3 @@ f <- RFF_get(D=1, noise=.1)
 curve(f(matrix(x,ncol=1)))
 for(i in 1:100) curve(f(matrix(x,ncol=1)), add=TRUE, col=sample(2:8,1))
 }
-
