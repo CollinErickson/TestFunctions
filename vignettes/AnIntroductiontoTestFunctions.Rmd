@@ -34,7 +34,7 @@ branin(matrix(runif(20), ncol=2))
 A contour of the banana function is shown below.
 
 ```{r}
-cf::cf(banana)
+ContourFunctions::cf(banana)
 ```
 
 ## General function information
@@ -71,7 +71,7 @@ curve(tf)
 Below is an example of a random wave in two dimensions.
 
 ```{r}
-cf::cf(RFF_get(D=2))
+ContourFunctions::cf(RFF_get(D=2))
 ```
 
 

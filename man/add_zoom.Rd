@@ -27,7 +27,7 @@ so that [0,1]^n refers to a subregion of the original function
 banana(c(.5,.85))
 add_zoom(banana, c(0,.5), c(1,1))(c(.5,.7))
 add_zoom(banana, c(.2,.5), c(.8,1))(matrix(c(.5,.7),ncol=2))
-cf::cf(banana)
-cf::cf(add_zoom(banana, c(0,.5), c(1,1)))
-cf::cf(add_zoom(banana, c(.2,.5), c(.8,1)))
+ContourFunctions::cf(banana)
+ContourFunctions::cf(add_zoom(banana, c(0,.5), c(1,1)))
+ContourFunctions::cf(add_zoom(banana, c(.2,.5), c(.8,1)))
 }
