@@ -75,6 +75,25 @@ ContourFunctions::cf(RFF_get(D=2))
 ```
 
 
+## Function enhancers
+
+There are some functions that modify other functions.
+
+* `add_linear_terms` adds linear terms to a function.
+
+* `add_noise` adds random noise to a function.
+
+* `add_null_dims` adds extra dimensions that do not affect the function output.
+
+* `add_zoom`  lets you zoom in on part of a function. Below are two examples of zooming in on the banana function.
+
+
+```{r}
+ContourFunctions::cf(banana)
+ContourFunctions::cf(add_zoom(banana, c(0,.5), c(1,1)))
+ContourFunctions::cf(add_zoom(banana, c(.2,.5), c(.8,1)))
+```
+
 ## Additional information
 
 Many of the functions, along with code implementing the function, can be found at <https://www.sfu.ca/~ssurjano/>. The code was not taken from this site, but some of my implementations were checked against theirs for consistency.

@@ -8,7 +8,7 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "tools/README-"
 )
 ```
 
@@ -38,11 +38,19 @@ branin(runif(2))
 branin(matrix(runif(20), ncol=2))
 ```
 
-```{r}
-cf::cf(banana)
+```{r bananacont}
+ContourFunctions::cf(banana)
 ```
 
 
 ## How do I get it?
 
 Install it like any other package with `install.packages`.
+
+```
+install.packages("TestFunctions")
+
+# Or the the development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("CollinErickson/TestFunctions")
+```
