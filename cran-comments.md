@@ -13,4 +13,5 @@ in the DESCRIPTION, but it is correct.
 
 ## Downstream dependencies
 
-None, this is a new release.
+No problems according to devtools.
+I don't think there are any downstream dependencies.
