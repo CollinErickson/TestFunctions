@@ -6,6 +6,7 @@
 \alias{TF_franke}
 \alias{TF_zhou1998}
 \alias{TF_currin1991}
+\alias{TF_currin1991b}
 \alias{TF_lim2002}
 \alias{TF_banana}
 \alias{TF_gaussian1}
@@ -25,6 +26,8 @@ TF_franke(x)
 TF_zhou1998(x)
 
 TF_currin1991(x)
+
+TF_currin1991b(x)
 
 TF_lim2002(x)
 
@@ -87,6 +90,10 @@ TF_currin1991: A function taking in a single vector.
 2 dimensional function.
 See corresponding function with "TF_" for more details.
 
+TF_currin1991b: A function taking in a single vector.
+2 dimensional function.
+See corresponding function with "TF_" for more details.
+
 TF_lim2002: A function taking in a single vector.
 2 dimensional function.
 See corresponding function with "TF_" for more details.
@@ -119,6 +126,7 @@ TF_borehole(runif(8))
 TF_franke(runif(2))
 TF_zhou1998(runif(2))
 TF_currin1991(runif(2))
+TF_currin1991b(runif(2))
 TF_lim2002(runif(2))
 TF_banana(runif(2))
 TF_gaussian1(runif(2))
@@ -126,4 +134,17 @@ TF_sinumoid(runif(2))
 TF_sqrtsin(runif(2))
 TF_powsin(runif(2))
 TF_OTL_Circuit(c(50,25,0.5,1.2,0.25,50))
+}
+\references{
+Dixon, L. C. W. (1978). The global optimization problem: an introduction. Towards Global Optimiation 2, 1-15.
+
+Morris, M. D., Mitchell, T. J., & Ylvisaker, D. (1993). Bayesian design and analysis of computer experiments: use of derivatives in surface prediction. Technometrics, 35(3), 243-255.
+
+Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School.
+
+An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-607.
+
+Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
+
+Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
 }

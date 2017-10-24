@@ -2,13 +2,14 @@
 #'
 #' branin: A function.
 #' 2 dimensional function.
+#' @references Dixon, L. C. W. (1978). The global optimization problem: an introduction. Towards Global Optimiation 2, 1-15.
 #' @export
 #' @rdname test_func_apply
 #' @examples
 #' branin(runif(2))
 #' branin(matrix(runif(20), ncol=2))
 branin <- function(x, scale_it=T, scale_low = c(-5, 0), scale_high = c(10, 15), noise=0) {
-  # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
+  # 2 dim
   test_func_apply(func=TF_branin, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' Base test function.
@@ -16,6 +17,7 @@ branin <- function(x, scale_it=T, scale_low = c(-5, 0), scale_high = c(10, 15), 
 #' TF_branin: A function taking in a single vector.
 #' 2 dimensional function.
 #' See corresponding function with "TF_" for more details.
+#' @references Dixon, L. C. W. (1978). The global optimization problem: an introduction. Towards Global Optimiation 2, 1-15.
 #' @export
 #' @rdname TF_OTL_Circuit
 #' @param a Parameter for TF_branin
@@ -33,6 +35,7 @@ TF_branin <- function(x, a=1, b=5.1/(4*pi^2), cc=5/pi, r=6, s=10, tt=1/(8*pi)) {
 
 #' borehole: A function estimating water flow through a borehole.
 #' 8 dimensional function.
+#' @references Morris, M. D., Mitchell, T. J., & Ylvisaker, D. (1993). Bayesian design and analysis of computer experiments: use of derivatives in surface prediction. Technometrics, 35(3), 243-255.
 #' @export
 #' @rdname test_func_apply
 #' @examples
@@ -46,6 +49,7 @@ borehole <- function(x, scale_it=T,
 #' TF_borehole: A function taking in a single vector.
 #' 8 dimensional function.
 #' See corresponding function with "TF_" for more details.
+#' @references Morris, M. D., Mitchell, T. J., & Ylvisaker, D. (1993). Bayesian design and analysis of computer experiments: use of derivatives in surface prediction. Technometrics, 35(3), 243-255.
 #' @export
 #' @rdname TF_OTL_Circuit
 #' @examples
@@ -62,17 +66,19 @@ TF_borehole <- function(x) {
 
 #' franke: A function.
 #' 2 dimensional function.
+#' @references Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School.
 #' @export
 #' @rdname test_func_apply
 #' @examples
 #' franke(runif(2))
 franke <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
-  # 2 dim, http://www.sfu.ca/~ssurjano/franke2d.html
+  # 2 dim
   test_func_apply(func=TF_franke, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_franke: A function taking in a single vector.
 #' 2 dimensional function.
 #' See corresponding function with "TF_" for more details.
+#' @references Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School.
 #' @export
 #' @rdname TF_OTL_Circuit
 #' @examples
@@ -87,23 +93,25 @@ TF_franke <- function(x) {
 
 #' zhou1998: A function.
 #' 2 dimensional function.
+#' @references An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-607.
 #' @export
 #' @rdname test_func_apply
 #' @examples
 #' zhou1998(runif(2))
 zhou1998 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
-  # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
+  # Any dim
   test_func_apply(func=TF_zhou1998, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_zhou1998: A function taking in a single vector.
 #' 2 dimensional function.
 #' See corresponding function with "TF_" for more details.
+#' @references An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-607.
 #' @export
 #' @rdname TF_OTL_Circuit
 #' @examples
 #' TF_zhou1998(runif(2))
 TF_zhou1998 <- function(x) {
-  # Any dim, http://www.sfu.ca/~ssurjano/zhou98.html
+  # Any dim
   d <- length(x)
   phi1 <- (2 * pi)^(-d / 2) * exp(-.5 * sum((10 * (x - 1 / 3))^2))
   phi2 <- (2 * pi)^(-d / 2) * exp(-.5 * sum((10 * (x - 2 / 3))^2))
@@ -113,17 +121,19 @@ TF_zhou1998 <- function(x) {
 
 #' currin1991: A function.
 #' 2 dimensional function.
+#' @references Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
 #' @export
 #' @rdname test_func_apply
 #' @examples
 #' currin1991(runif(2))
 currin1991 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
-  # 2 dim, http://www.sfu.ca/~ssurjano/curretal91.html
+  # 2 dim
   test_func_apply(func=TF_currin1991, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_currin1991: A function taking in a single vector.
 #' 2 dimensional function.
 #' See corresponding function with "TF_" for more details.
+#' @references Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
 #' @export
 #' @rdname TF_OTL_Circuit
 #' @examples
@@ -131,6 +141,33 @@ currin1991 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), n
 TF_currin1991 <- function(x) {
   4.9 + 21.15 * x[1] - 2.17 * x[2] - 15.88 * x[1]^2 -
     1.38 * x[2]^2 - 5.26 * x[1] * x[2]
+}
+
+
+#' currin1991b: A function.
+#' 2 dimensional function.
+#' @references Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' currin1991b(runif(2))
+currin1991b <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
+  # 2 dim
+  test_func_apply(func=TF_currin1991b, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
+}
+#' TF_currin1991b: A function taking in a single vector.
+#' 2 dimensional function.
+#' See corresponding function with "TF_" for more details.
+#' @references Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
+#' @export
+#' @rdname TF_OTL_Circuit
+#' @examples
+#' TF_currin1991b(runif(2))
+TF_currin1991b <- function(x) {
+  a <- 1 - exp(-.5/x[2])
+  b <- 2300 * x[1]^3 + 1900 * x[1]^2 * 2092*x[1] + 60
+  c <- 100*x[1]^3 + 500*x[1]^2 + 4*x[1] + 20
+  a*b/c
 }
 
 
@@ -188,7 +225,6 @@ TF_banana <- function(x){
 #' @examples
 #' gaussian1(runif(2))
 gaussian1 <- function(x, scale_it=F, scale_low = c(0, 0), scale_high = c(1,1), noise=0) {
-  # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
   test_func_apply(func=TF_gaussian1, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #gaussian1 <- standard_test_func(TF_gaussian1, scale_it=F, scale_low = c(0,0), scale_high = c(1,1))
@@ -216,7 +252,7 @@ TF_gaussian1 <- function(x, center=.5, s2=.01) {
 #' z <- outer(x, y, Vectorize(function(a, b){sinumoid(c(a, b))}))
 #' contour(x, y, z)
 sinumoid <- function(x, scale_it=F, scale_low = c(0, 0), scale_high = c(1,1), noise=0) {
-  # 2 dim, http://www.sfu.ca/~ssurjano/branin.html
+  # 2 dim
   test_func_apply(func=TF_sinumoid, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #sinumoid <- standard_test_func(TF_sinumoid, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0)
@@ -1110,4 +1146,33 @@ TF_quad_peaks_slant <- function(x) {
     TestFunctions::rastrigin, scale_low = c(.4,.4), scale_high = c(.6,.6)
   )(x)^.9 +
     sum(c(.01,.01) * x)
+}
+
+
+#' SWNExpCos: SWNExpCos function
+#' Functoin from Santner, Williams, and Notz (2003).
+#' 1 dimensional function.
+#'
+#' @references Santner, T. J., Williams, B. J., & Notz, W. (2003). The Design and Analysis of Computer Experiments. Springer Science & Business Media.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' SWNExpCos(runif(2))
+#' SWNExpCos(matrix(runif(2*20),ncol=2))
+SWNExpCos <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_SWNExpCos, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_SWNExpCos: SWNExpCos function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#' @references Santner, T. J., Williams, B. J., & Notz, W. (2003). The Design and Analysis of Computer Experiments. Springer Science & Business Media.
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_SWNExpCos(rep(0,2))
+#' TF_SWNExpCos(rep(1,2))
+TF_SWNExpCos <- function(x) {
+  exp(-1.4*x) * cos(7*pi*x/2)
 }

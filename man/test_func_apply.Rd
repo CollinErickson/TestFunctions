@@ -6,6 +6,7 @@
 \alias{franke}
 \alias{zhou1998}
 \alias{currin1991}
+\alias{currin1991b}
 \alias{lim2002}
 \alias{banana}
 \alias{gaussian1}
@@ -37,6 +38,7 @@
 \alias{hartmann}
 \alias{quad_peaks}
 \alias{quad_peaks_slant}
+\alias{SWNExpCos}
 \alias{test_func_apply}
 \title{Test function.}
 \usage{
@@ -54,6 +56,9 @@ zhou1998(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0)
 
 currin1991(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+  noise = 0)
+
+currin1991b(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0)
 
 lim2002(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
@@ -144,6 +149,9 @@ quad_peaks(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
 quad_peaks_slant(x, scale_it = T, scale_low = 0, scale_high = 1,
   noise = 0, ...)
 
+SWNExpCos(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
+  ...)
+
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
 \arguments{
@@ -192,6 +200,9 @@ zhou1998: A function.
 2 dimensional function.
 
 currin1991: A function.
+2 dimensional function.
+
+currin1991b: A function.
 2 dimensional function.
 
 lim2002: Some function?
@@ -288,6 +299,10 @@ quad_peaks: quad_peaks function
 quad_peaks_slant: quad_peaks_slant function
 2 dimensional function.
 
+SWNExpCos: SWNExpCos function
+Functoin from Santner, Williams, and Notz (2003).
+1 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -298,6 +313,7 @@ borehole(matrix(runif(80), ncol=8))
 franke(runif(2))
 zhou1998(runif(2))
 currin1991(runif(2))
+currin1991b(runif(2))
 lim2002(runif(2))
 banana(runif(2))
 x <- y <- seq(0, 1, len=100)
@@ -360,13 +376,29 @@ quad_peaks(runif(2))
 quad_peaks(matrix(runif(2*20),ncol=2))
 quad_peaks_slant(runif(2))
 quad_peaks_slant(matrix(runif(2*20),ncol=2))
+SWNExpCos(runif(2))
+SWNExpCos(matrix(runif(2*20),ncol=2))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
 curve(sin(2*pi*x), col=2, add=TRUE)
 }
 \references{
+Dixon, L. C. W. (1978). The global optimization problem: an introduction. Towards Global Optimiation 2, 1-15.
+
+Morris, M. D., Mitchell, T. J., & Ylvisaker, D. (1993). Bayesian design and analysis of computer experiments: use of derivatives in surface prediction. Technometrics, 35(3), 243-255.
+
+Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School.
+
+An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-607.
+
+Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
+
+Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
+
 http://www.abe.ufl.edu/jjones/ABE_5646/2010/Morris.1991%20SA%20paper.pdf
 
 http://www.tandfonline.com/doi/pdf/10.1198/TECH.2010.09157?needAccess=true
+
+Santner, T. J., Williams, B. J., & Notz, W. (2003). The Design and Analysis of Computer Experiments. Springer Science & Business Media.
 }
