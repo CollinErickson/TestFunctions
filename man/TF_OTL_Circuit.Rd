@@ -9,6 +9,7 @@
 \alias{TF_currin1991b}
 \alias{TF_lim2002}
 \alias{TF_banana}
+\alias{TF_banana_grad}
 \alias{TF_gaussian1}
 \alias{TF_sinumoid}
 \alias{TF_sqrtsin}
@@ -32,6 +33,8 @@ TF_currin1991b(x)
 TF_lim2002(x)
 
 TF_banana(x)
+
+TF_banana_grad(x, v1, v2)
 
 TF_gaussian1(x, center = 0.5, s2 = 0.01)
 
@@ -57,6 +60,10 @@ TF_OTL_Circuit(x)
 \item{s}{Parameter for TF_branin}
 
 \item{tt}{Parameter for TF_branin}
+
+\item{v1}{Scale parameter for first dimension}
+
+\item{v2}{Scale parameter for second dimension}
 
 \item{center}{Where to center the function, a vector.}
 
@@ -102,6 +109,10 @@ TF_banana: A function taking in a single vector.
 2 dimensional function.
 See corresponding function with "TF_" for more details.
 
+TF_banana_grad: A function taking in a single vector.
+2 dimensional function.
+See corresponding function with "TF_" for more details.
+
 TF_gaussian1: A function taking in a single vector.
 Any dimensional function.
 See corresponding function with "TF_" for more details.
@@ -129,6 +140,7 @@ TF_currin1991(runif(2))
 TF_currin1991b(runif(2))
 TF_lim2002(runif(2))
 TF_banana(runif(2))
+TF_banana_grad(runif(2), v1=40, v2=15)
 TF_gaussian1(runif(2))
 TF_sinumoid(runif(2))
 TF_sqrtsin(runif(2))

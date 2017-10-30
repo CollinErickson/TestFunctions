@@ -218,6 +218,36 @@ TF_banana <- function(x){
   exp(-.005*x[1]^2-.5*(x[2]+.03*x[1]^2-3)^2)
 }
 
+#' banana_grad: The gradient of the banana function.
+#' 2 dimensional function.
+#' 2 dimensional output.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' banana_grad(runif(2))
+#' x <- y <- seq(0, 1, len=100)
+#' z <- outer(x, y, Vectorize(function(a, b){sum(banana_grad(c(a, b))^2)}))
+#' contour(x, y, z)
+banana_grad <- function(x, scale_it=T, scale_low = c(-20,-10), scale_high = c(20,5), noise=0) {
+  # 2 dim, See Roshan SMED
+  test_func_apply(func=TF_banana_grad, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, v1=scale_high[1]-scale_low[1], v2=scale_high[2]-scale_low[2])
+}
+#' TF_banana_grad: A function taking in a single vector.
+#' 2 dimensional function.
+#' See corresponding function with "TF_" for more details.
+#' @param v1 Scale parameter for first dimension
+#' @param v2 Scale parameter for second dimension
+#' @export
+#' @rdname TF_OTL_Circuit
+#' @examples
+#' TF_banana_grad(runif(2), v1=40, v2=15)
+TF_banana_grad <- function(x, v1, v2){
+  t0 <- (x[2]+.03*x[1]^2-3)
+  t1 <- exp(-.005*x[1]^2-.5*t0^2)
+  -t1*c(v1*x[1]*(.01 + .06*t0), t0*v2)
+}
+
+
 #' gaussian1: A Gaussian function centered at 0.5.
 #' Any dimensional function.
 #' @export

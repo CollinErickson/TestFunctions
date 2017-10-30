@@ -9,6 +9,7 @@
 \alias{currin1991b}
 \alias{lim2002}
 \alias{banana}
+\alias{banana_grad}
 \alias{gaussian1}
 \alias{sinumoid}
 \alias{waterfall}
@@ -66,6 +67,9 @@ lim2002(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
 
 banana(x, scale_it = T, scale_low = c(-20, -10), scale_high = c(20, 5),
   noise = 0)
+
+banana_grad(x, scale_it = T, scale_low = c(-20, -10), scale_high = c(20,
+  5), noise = 0)
 
 gaussian1(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0)
@@ -211,6 +215,10 @@ lim2002: Some function?
 banana: A banana shaped function.
 2 dimensional function.
 
+banana_grad: The gradient of the banana function.
+2 dimensional function.
+2 dimensional output.
+
 gaussian1: A Gaussian function centered at 0.5.
 Any dimensional function.
 
@@ -318,6 +326,10 @@ lim2002(runif(2))
 banana(runif(2))
 x <- y <- seq(0, 1, len=100)
 z <- outer(x, y, Vectorize(function(a, b){banana(c(a, b))}))
+contour(x, y, z)
+banana_grad(runif(2))
+x <- y <- seq(0, 1, len=100)
+z <- outer(x, y, Vectorize(function(a, b){sum(banana_grad(c(a, b))^2)}))
 contour(x, y, z)
 gaussian1(runif(2))
 sinumoid(runif(2))
