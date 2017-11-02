@@ -15,6 +15,8 @@ logistic <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...)
 #' TF_logistic: logistic function for evaluating a single point.
 #'
 #' @param x Input vector at which to evaluate.
+#' @param offset Amount it should be offset
+#' @param scl Scale parameter
 #'
 #' @return Function output evaluated at x.
 #' @export
@@ -44,6 +46,8 @@ logistic15 <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ..
 #' Same as logistic except adjusted to be reasonable from 0 to 1.
 #'
 #' @param x Input vector at which to evaluate.
+#' @param offset Amount it should be offset
+#' @param scl Scale parameter
 #'
 #' @return Function output evaluated at x.
 #' @export

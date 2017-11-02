@@ -8,6 +8,10 @@ TF_logistic(x, offset = 0, scl = 1)
 }
 \arguments{
 \item{x}{Input vector at which to evaluate.}
+
+\item{offset}{Amount it should be offset}
+
+\item{scl}{Scale parameter}
 }
 \value{
 Function output evaluated at x.
