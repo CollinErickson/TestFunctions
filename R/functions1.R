@@ -194,8 +194,10 @@ TF_lim2002 <- function(x) {
 }
 
 
-#' banana: A banana shaped function.
+#' banana: A banana shaped function. Originally from Haario et al (1999), it is a twisted Gaussian.
 #' 2 dimensional function.
+#' @references Haario, H., Saksman, E., & Tamminen, J. (1999). Adaptive proposal distribution for random walk Metropolis algorithm. Computational Statistics, 14(3), 375-396.
+#' @references Joseph, V. R., Dasgupta, T., Tuo, R., & Wu, C. J. (2015). Sequential exploration of complex surfaces using minimum energy designs. Technometrics, 57(1), 64-74.
 #' @export
 #' @rdname test_func_apply
 #' @examples
@@ -210,6 +212,8 @@ banana <- function(x, scale_it=T, scale_low = c(-20,-10), scale_high = c(20,5), 
 #' TF_banana: A function taking in a single vector.
 #' 2 dimensional function.
 #' See corresponding function with "TF_" for more details.
+#' @references Haario, H., Saksman, E., & Tamminen, J. (1999). Adaptive proposal distribution for random walk Metropolis algorithm. Computational Statistics, 14(3), 375-396.
+#' @references Joseph, V. R., Dasgupta, T., Tuo, R., & Wu, C. J. (2015). Sequential exploration of complex surfaces using minimum energy designs. Technometrics, 57(1), 64-74.
 #' @export
 #' @rdname TF_OTL_Circuit
 #' @examples
