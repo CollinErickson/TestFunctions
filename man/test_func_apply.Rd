@@ -44,6 +44,8 @@
 \alias{logistic}
 \alias{logistic15}
 \alias{logistic_plateau}
+\alias{vertigrad}
+\alias{vertigrad_grad}
 \alias{test_func_apply}
 \title{Test function.}
 \usage{
@@ -166,6 +168,12 @@ logistic15(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
   ...)
 
 logistic_plateau(x, scale_it = T, scale_low = 0, scale_high = 1,
+  noise = 0, ...)
+
+vertigrad(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
+  ...)
+
+vertigrad_grad(x, scale_it = T, scale_low = 0, scale_high = 1,
   noise = 0, ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
@@ -335,6 +343,13 @@ logistic_plateau: logistic_plateau function. Sum of two logistics with
 a plateau in the middle.
 1 dimensional function.
 
+vertigrad: vertigrad function
+2 dimensional function.
+
+vertigrad_grad: gradient of the vertigrad function
+2 dimensional function.
+2 dimensional output.
+
 General function for evaluating a test function
 }
 \examples{
@@ -422,6 +437,10 @@ curve(logistic15(x,offset=.25))
 logistic15(matrix(runif(20),ncol=1))
 curve(logistic_plateau(matrix(x,ncol=1)))
 logistic_plateau(matrix(runif(20),ncol=1))
+vertigrad(runif(2))
+vertigrad(matrix(runif(2*20),ncol=2))
+vertigrad_grad(runif(2))
+vertigrad_grad(matrix(runif(2*20),ncol=2))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)

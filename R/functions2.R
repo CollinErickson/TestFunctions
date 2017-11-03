@@ -85,3 +85,56 @@ logistic_plateau <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise
 TF_logistic_plateau <- function(x) {
   logistic(x, offset=.15, scl=15) - logistic(x, offset=.85,scl=15)
 }
+
+
+#' vertigrad: vertigrad function
+#' 2 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' vertigrad(runif(2))
+#' vertigrad(matrix(runif(2*20),ncol=2))
+vertigrad <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_vertigrad, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_vertigrad: vertigrad function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_vertigrad(rep(0,2))
+#' TF_vertigrad(rep(1,2))
+TF_vertigrad <- function(x) {
+  sin(2*pi*x[1]) + .5*sin(4*pi*x[1]) + x[2]^2
+}
+
+#' vertigrad_grad: gradient of the vertigrad function
+#' 2 dimensional function.
+#' 2 dimensional output.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' vertigrad_grad(runif(2))
+#' vertigrad_grad(matrix(runif(2*20),ncol=2))
+vertigrad_grad <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_vertigrad_grad, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_vertigrad_grad: vertigrad_grad function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_vertigrad_grad(rep(0,2))
+#' TF_vertigrad_grad(rep(1,2))
+TF_vertigrad_grad <- function(x) {
+  c(2*pi*cos(2*pi*x[1]) + .5*4*pi*cos(4*pi*x[1]), 2*x[2])
+}
+
