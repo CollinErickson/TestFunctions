@@ -130,6 +130,7 @@ vertigrad_grad <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0
 #'
 #' @return Function output evaluated at x.
 #' @export
+#' @references Forrester, A., & Keane, A. (2008). Engineering design via surrogate modelling: a practical guide. John Wiley & Sons.
 #'
 #' @examples
 #' TF_vertigrad_grad(rep(0,2))
@@ -138,3 +139,29 @@ TF_vertigrad_grad <- function(x) {
   c(2*pi*cos(2*pi*x[1]) + .5*4*pi*cos(4*pi*x[1]), 2*x[2])
 }
 
+
+#' beambending: beambending function
+#' 3 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' beambending(runif(3))
+#' beambending(matrix(runif(3*20),ncol=3))
+beambending <- function(x, scale_it=T, scale_low = c(10,1,0.1), scale_high = c(20,2,0.2), noise=0, ...) {
+  test_func_apply(func=TF_beambending, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_beambending: beambending function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_beambending(rep(0,3))
+#' TF_beambending(rep(1,3))
+TF_beambending <- function(x) {
+  # 4e-9 * L^3 / (b * h^3)
+  4e-9 * x[1]^3 / (x[2] * x[3]^3)
+}

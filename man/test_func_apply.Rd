@@ -46,6 +46,7 @@
 \alias{logistic_plateau}
 \alias{vertigrad}
 \alias{vertigrad_grad}
+\alias{beambending}
 \alias{test_func_apply}
 \title{Test function.}
 \usage{
@@ -176,6 +177,9 @@ vertigrad(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
 vertigrad_grad(x, scale_it = T, scale_low = 0, scale_high = 1,
   noise = 0, ...)
 
+beambending(x, scale_it = T, scale_low = c(10, 1, 0.1), scale_high = c(20,
+  2, 0.2), noise = 0, ...)
+
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
 \arguments{
@@ -221,7 +225,7 @@ franke: A function.
 2 dimensional function.
 
 zhou1998: A function.
-2 dimensional function.
+Any dimensional function.
 
 currin1991: A function.
 2 dimensional function.
@@ -350,6 +354,9 @@ vertigrad_grad: gradient of the vertigrad function
 2 dimensional function.
 2 dimensional output.
 
+beambending: beambending function
+3 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -441,6 +448,8 @@ vertigrad(runif(2))
 vertigrad(matrix(runif(2*20),ncol=2))
 vertigrad_grad(runif(2))
 vertigrad_grad(matrix(runif(2*20),ncol=2))
+beambending(runif(3))
+beambending(matrix(runif(3*20),ncol=3))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
@@ -462,6 +471,8 @@ Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian predictio
 Haario, H., Saksman, E., & Tamminen, J. (1999). Adaptive proposal distribution for random walk Metropolis algorithm. Computational Statistics, 14(3), 375-396.
 
 Joseph, V. R., Dasgupta, T., Tuo, R., & Wu, C. J. (2015). Sequential exploration of complex surfaces using minimum energy designs. Technometrics, 57(1), 64-74.
+
+Forrester, A., & Keane, A. (2008). Engineering design via surrogate modelling: a practical guide. John Wiley & Sons.
 
 http://www.abe.ufl.edu/jjones/ABE_5646/2010/Morris.1991%20SA%20paper.pdf
 

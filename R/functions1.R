@@ -92,7 +92,7 @@ TF_franke <- function(x) {
 
 
 #' zhou1998: A function.
-#' 2 dimensional function.
+#' Any dimensional function.
 #' @references An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-607.
 #' @export
 #' @rdname test_func_apply
@@ -103,7 +103,7 @@ zhou1998 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noi
   test_func_apply(func=TF_zhou1998, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_zhou1998: A function taking in a single vector.
-#' 2 dimensional function.
+#' Any dimensional function.
 #' See corresponding function with "TF_" for more details.
 #' @references An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-607.
 #' @export
@@ -525,6 +525,7 @@ TF_piston <- function(x) {
 
 #' wingweight: Wing weight function.
 #' 10 dimensional function.
+#' @references Forrester, A., & Keane, A. (2008). Engineering design via surrogate modelling: a practical guide. John Wiley & Sons.
 #' @export
 #' @rdname test_func_apply
 #' @examples
@@ -539,11 +540,13 @@ wingweight <- function(x, scale_it=T, scale_low = c(150,220,6,-10,16,.5,.08,2.5,
 #' @param x Input vector at which to evaluate.
 #'
 #' @return Function output evaluated at x.
+#' @references Forrester, A., & Keane, A. (2008). Engineering design via surrogate modelling: a practical guide. John Wiley & Sons.
 #' @export
 #'
 #' @examples
 #' TF_wingweight(c(150,220,6,-10,16,.5,.08,2.5,1700,.025)) # minimum of zero, hard to solve
 TF_wingweight <- function(x) {
+  # Single line: a <- .036 * x[1]^.758 * x[2]^.0035 * (x[3]/cos(x[4]*pi/180)^2)^.6 * x[5]^.006 * x[6]^.04 * (100*x[7]/cos(x[4]*pi/180))^-.3 * (x[8]*x[9])^.49 + x[1]*x[10]
   Sw <- x[1]
   Wfw <- x[2]
   A <- x[3]
@@ -554,6 +557,7 @@ TF_wingweight <- function(x) {
   Nz <- x[8]
   Wdg <- x[9]
   Wp <- x[10]
+
   0.036 * Sw^.758 * Wfw^.0035 * (A/cos(Lambda)^2)^.6 * q^.006 * lambda^.04 * (100*tc/cos(Lambda))^-.3 * (Nz*Wdg)^.49 + Sw*Wp
 }
 

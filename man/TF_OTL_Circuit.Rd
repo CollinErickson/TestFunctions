@@ -90,7 +90,7 @@ TF_franke: A function taking in a single vector.
 See corresponding function with "TF_" for more details.
 
 TF_zhou1998: A function taking in a single vector.
-2 dimensional function.
+Any dimensional function.
 See corresponding function with "TF_" for more details.
 
 TF_currin1991: A function taking in a single vector.

@@ -19,3 +19,6 @@ TF_vertigrad_grad: vertigrad_grad function for evaluating a single point.
 TF_vertigrad_grad(rep(0,2))
 TF_vertigrad_grad(rep(1,2))
 }
+\references{
+Forrester, A., & Keane, A. (2008). Engineering design via surrogate modelling: a practical guide. John Wiley & Sons.
+}
