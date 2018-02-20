@@ -59,8 +59,8 @@ TF_borehole <- function(x) {
   # See: http://www.sfu.ca/~ssurjano/borehole.html
   2 * pi * x[3] * (x[4] - x[6]) /
     (log(x[2] / x[1]) *
-       (1 + 2 * x[7] * x[3] / log(x[2] / x[1]) * x[1]^2 * x[8]) +
-       x[3] / x[5])
+       (1 + 2 * x[7] * x[3] / (log(x[2] / x[1]) * x[1]^2 * x[8]) +
+       x[3] / x[5]))
 }
 
 
