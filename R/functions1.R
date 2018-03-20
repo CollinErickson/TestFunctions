@@ -171,8 +171,13 @@ TF_currin1991b <- function(x) {
 }
 
 
-#' lim2002: Some function?
-#' 2 dimensional function.
+#' lim2002: 2 dimensional function.
+#' Equation 27 from Lim et al 2002.
+#'
+#' @references Lim, Yong B., Jerome Sacks, W. J. Studden, and William J. Welch.
+#' "Design and analysis of computer experiments when the output is highly
+#' correlated over the input space."
+#' Canadian Journal of Statistics 30, no. 1 (2002): 109-126.
 #' @export
 #' @rdname test_func_apply
 #' @examples

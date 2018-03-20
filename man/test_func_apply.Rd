@@ -233,8 +233,8 @@ currin1991: A function.
 currin1991b: A function.
 2 dimensional function.
 
-lim2002: Some function?
-2 dimensional function.
+lim2002: 2 dimensional function.
+Equation 27 from Lim et al 2002.
 
 banana: A banana shaped function. Originally from Haario et al (1999), it is a twisted Gaussian.
 2 dimensional function.
@@ -467,6 +467,11 @@ An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-6
 Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
 
 Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
+
+Lim, Yong B., Jerome Sacks, W. J. Studden, and William J. Welch.
+"Design and analysis of computer experiments when the output is highly
+correlated over the input space."
+Canadian Journal of Statistics 30, no. 1 (2002): 109-126.
 
 Haario, H., Saksman, E., & Tamminen, J. (1999). Adaptive proposal distribution for random walk Metropolis algorithm. Computational Statistics, 14(3), 375-396.
 
