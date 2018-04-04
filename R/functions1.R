@@ -171,7 +171,7 @@ TF_currin1991b <- function(x) {
 }
 
 
-#' lim2002: 2 dimensional function.
+#' limpoly: 2 dimensional function.
 #' Equation 27 from Lim et al 2002.
 #'
 #' @references Lim, Yong B., Jerome Sacks, W. J. Studden, and William J. Welch.
@@ -181,21 +181,46 @@ TF_currin1991b <- function(x) {
 #' @export
 #' @rdname test_func_apply
 #' @examples
-#' lim2002(runif(2))
-lim2002 <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
+#' limpoly(runif(2))
+limpoly <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
   # 2 dim, http://www.sfu.ca/~ssurjano/limetal02pol.html
-  test_func_apply(func=TF_lim2002, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
+  test_func_apply(func=TF_limpoly, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
-#' TF_lim2002: A function taking in a single vector.
+#' TF_limpoly: A function taking in a single vector.
 #' 2 dimensional function.
 #' See corresponding function with "TF_" for more details.
 #' @export
 #' @rdname TF_OTL_Circuit
 #' @examples
-#' TF_lim2002(runif(2))
-TF_lim2002 <- function(x) {
+#' TF_limpoly(runif(2))
+TF_limpoly <- function(x) {
   9 + 2.5 * x[1] - 17.5 * x[2] + 2.5 * x[1] * x[2] + 19 * x[2]^2 -
     7.5 * x[1]^3 - 2.5 * x[1] * x[2]^2 - 5.5 * x[2]^4 + x[1]^3 * x[2]^2
+}
+
+#' limnonpoly: 2 dimensional function.
+#' Equation 28 from Lim et al 2002.
+#'
+#' @references Lim, Yong B., Jerome Sacks, W. J. Studden, and William J. Welch.
+#' "Design and analysis of computer experiments when the output is highly
+#' correlated over the input space."
+#' Canadian Journal of Statistics 30, no. 1 (2002): 109-126.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' limnonpoly(runif(2))
+limnonpoly <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise=0) {
+  test_func_apply(func=TF_limnonpoly, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
+}
+#' TF_limnonpoly: A function taking in a single vector.
+#' 2 dimensional function.
+#' See corresponding function with "TF_" for more details.
+#' @export
+#' @rdname TF_OTL_Circuit
+#' @examples
+#' TF_limnonpoly(runif(2))
+TF_limnonpoly <- function(x) {
+  ((30+5*x[1]*sin(5*x[1]))*(4+exp(-5*x[2])) - 100) / 6
 }
 
 

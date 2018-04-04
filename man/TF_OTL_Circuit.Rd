@@ -7,7 +7,8 @@
 \alias{TF_zhou1998}
 \alias{TF_currin1991}
 \alias{TF_currin1991b}
-\alias{TF_lim2002}
+\alias{TF_limpoly}
+\alias{TF_limnonpoly}
 \alias{TF_banana}
 \alias{TF_banana_grad}
 \alias{TF_gaussian1}
@@ -30,7 +31,9 @@ TF_currin1991(x)
 
 TF_currin1991b(x)
 
-TF_lim2002(x)
+TF_limpoly(x)
+
+TF_limnonpoly(x)
 
 TF_banana(x)
 
@@ -101,7 +104,11 @@ TF_currin1991b: A function taking in a single vector.
 2 dimensional function.
 See corresponding function with "TF_" for more details.
 
-TF_lim2002: A function taking in a single vector.
+TF_limpoly: A function taking in a single vector.
+2 dimensional function.
+See corresponding function with "TF_" for more details.
+
+TF_limnonpoly: A function taking in a single vector.
 2 dimensional function.
 See corresponding function with "TF_" for more details.
 
@@ -138,7 +145,8 @@ TF_franke(runif(2))
 TF_zhou1998(runif(2))
 TF_currin1991(runif(2))
 TF_currin1991b(runif(2))
-TF_lim2002(runif(2))
+TF_limpoly(runif(2))
+TF_limnonpoly(runif(2))
 TF_banana(runif(2))
 TF_banana_grad(runif(2), v1=40, v2=15)
 TF_gaussian1(runif(2))

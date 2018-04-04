@@ -8,7 +8,8 @@
 \alias{zhou1998}
 \alias{currin1991}
 \alias{currin1991b}
-\alias{lim2002}
+\alias{limpoly}
+\alias{limnonpoly}
 \alias{banana}
 \alias{banana_grad}
 \alias{gaussian1}
@@ -69,7 +70,10 @@ currin1991(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
 currin1991b(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0)
 
-lim2002(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+limpoly(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
+  noise = 0)
+
+limnonpoly(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0)
 
 banana(x, scale_it = T, scale_low = c(-20, -10), scale_high = c(20, 5),
@@ -233,8 +237,11 @@ currin1991: A function.
 currin1991b: A function.
 2 dimensional function.
 
-lim2002: 2 dimensional function.
+limpoly: 2 dimensional function.
 Equation 27 from Lim et al 2002.
+
+limnonpoly: 2 dimensional function.
+Equation 28 from Lim et al 2002.
 
 banana: A banana shaped function. Originally from Haario et al (1999), it is a twisted Gaussian.
 2 dimensional function.
@@ -368,7 +375,8 @@ franke(runif(2))
 zhou1998(runif(2))
 currin1991(runif(2))
 currin1991b(runif(2))
-lim2002(runif(2))
+limpoly(runif(2))
+limnonpoly(runif(2))
 banana(runif(2))
 x <- y <- seq(0, 1, len=100)
 z <- outer(x, y, Vectorize(function(a, b){banana(c(a, b))}))
@@ -467,6 +475,11 @@ An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-6
 Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
 
 Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian prediction of deterministic functions, with applications to the design and analysis of computer experiments. Journal of the American Statistical Association, 86(416), 953-963.
+
+Lim, Yong B., Jerome Sacks, W. J. Studden, and William J. Welch.
+"Design and analysis of computer experiments when the output is highly
+correlated over the input space."
+Canadian Journal of Statistics 30, no. 1 (2002): 109-126.
 
 Lim, Yong B., Jerome Sacks, W. J. Studden, and William J. Welch.
 "Design and analysis of computer experiments when the output is highly
