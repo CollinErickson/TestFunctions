@@ -165,3 +165,30 @@ TF_beambending <- function(x) {
   # 4e-9 * L^3 / (b * h^3)
   4e-9 * x[1]^3 / (x[2] * x[3]^3)
 }
+
+#' chengsandu: chengsandu function
+#' 2 dimensional function.
+#' @export
+#' @references Cheng, Haiyan, and Adrian Sandu. "Collocation least-squares polynomial chaos method." In Proceedings of the 2010 Spring Simulation Multiconference, p. 80. Society for Computer Simulation International, 2010.
+#' @rdname test_func_apply
+#' @examples
+#' chengsandu(runif(2))
+#' chengsandu(matrix(runif(2*20),ncol=2))
+chengsandu <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_chengsandu, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_chengsandu: chengsandu function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#' @references Cheng, Haiyan, and Adrian Sandu. "Collocation least-squares polynomial chaos method." In Proceedings of the 2010 Spring Simulation Multiconference, p. 80. Society for Computer Simulation International, 2010.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_chengsandu(rep(0,2))
+#' TF_chengsandu(rep(1,2))
+TF_chengsandu <- function(x) {
+  cos(x[1]+x[2]) * exp(x[1] * x[2])
+}

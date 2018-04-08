@@ -48,6 +48,7 @@
 \alias{vertigrad}
 \alias{vertigrad_grad}
 \alias{beambending}
+\alias{chengsandu}
 \alias{test_func_apply}
 \title{Test function.}
 \usage{
@@ -183,6 +184,9 @@ vertigrad_grad(x, scale_it = T, scale_low = 0, scale_high = 1,
 
 beambending(x, scale_it = T, scale_low = c(10, 1, 0.1), scale_high = c(20,
   2, 0.2), noise = 0, ...)
+
+chengsandu(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
+  ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -364,6 +368,9 @@ vertigrad_grad: gradient of the vertigrad function
 beambending: beambending function
 3 dimensional function.
 
+chengsandu: chengsandu function
+2 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -458,6 +465,8 @@ vertigrad_grad(runif(2))
 vertigrad_grad(matrix(runif(2*20),ncol=2))
 beambending(runif(3))
 beambending(matrix(runif(3*20),ncol=3))
+chengsandu(runif(2))
+chengsandu(matrix(runif(2*20),ncol=2))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
@@ -497,4 +506,6 @@ http://www.abe.ufl.edu/jjones/ABE_5646/2010/Morris.1991%20SA%20paper.pdf
 http://www.tandfonline.com/doi/pdf/10.1198/TECH.2010.09157?needAccess=true
 
 Santner, T. J., Williams, B. J., & Notz, W. (2003). The Design and Analysis of Computer Experiments. Springer Science & Business Media.
+
+Cheng, Haiyan, and Adrian Sandu. "Collocation least-squares polynomial chaos method." In Proceedings of the 2010 Spring Simulation Multiconference, p. 80. Society for Computer Simulation International, 2010.
 }
