@@ -49,6 +49,7 @@
 \alias{vertigrad_grad}
 \alias{beambending}
 \alias{chengsandu}
+\alias{steelcolumnstress}
 \alias{test_func_apply}
 \title{Test function.}
 \usage{
@@ -187,6 +188,10 @@ beambending(x, scale_it = T, scale_low = c(10, 1, 0.1), scale_high = c(20,
 
 chengsandu(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
   ...)
+
+steelcolumnstress(x, scale_it = T, scale_low = c(330, 4e+05, 420000, 420000,
+  200, 10, 100, 10, 12600), scale_high = c(470, 6e+05, 780000, 780000, 400,
+  30, 500, 50, 29400), noise = 0, ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -371,6 +376,12 @@ beambending: beambending function
 chengsandu: chengsandu function
 2 dimensional function.
 
+steelcolumnstress: steelcolumnstress function. This is not checked and doesn't seem right.
+The parameter L is not defined in paper. The ranges for variables are on different
+distributions, not all uniform.
+Don't use this.
+8 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -467,6 +478,8 @@ beambending(runif(3))
 beambending(matrix(runif(3*20),ncol=3))
 chengsandu(runif(2))
 chengsandu(matrix(runif(2*20),ncol=2))
+steelcolumnstress(runif(8))
+steelcolumnstress(matrix(runif(8*20),ncol=8))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
@@ -508,4 +521,8 @@ http://www.tandfonline.com/doi/pdf/10.1198/TECH.2010.09157?needAccess=true
 Santner, T. J., Williams, B. J., & Notz, W. (2003). The Design and Analysis of Computer Experiments. Springer Science & Business Media.
 
 Cheng, Haiyan, and Adrian Sandu. "Collocation least-squares polynomial chaos method." In Proceedings of the 2010 Spring Simulation Multiconference, p. 80. Society for Computer Simulation International, 2010.
+
+Kuschel, Norbert, and Rudiger Rackwitz. "Two basic problems in reliability-based structural optimization." Mathematical Methods of Operations Research 46, no. 3 (1997): 309-333.
+
+Prikhodko, Pavel, and Nikita Kotlyarov. "Calibration of Sobol indices estimates in case of noisy output." arXiv preprint arXiv:1804.00766 (2018).
 }
