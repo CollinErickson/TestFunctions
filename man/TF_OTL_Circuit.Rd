@@ -160,7 +160,7 @@ Dixon, L. C. W. (1978). The global optimization problem: an introduction. Toward
 
 Morris, M. D., Mitchell, T. J., & Ylvisaker, D. (1993). Bayesian design and analysis of computer experiments: use of derivatives in surface prediction. Technometrics, 35(3), 243-255.
 
-Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School.
+Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School. Page 13.
 
 An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-607.
 

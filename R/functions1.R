@@ -66,7 +66,7 @@ TF_borehole <- function(x) {
 
 #' franke: A function.
 #' 2 dimensional function.
-#' @references Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School.
+#' @references Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School. Page 13.
 #' @export
 #' @rdname test_func_apply
 #' @examples
@@ -78,7 +78,7 @@ franke <- function(x, scale_it=F, scale_low = c(0,0), scale_high = c(1,1), noise
 #' TF_franke: A function taking in a single vector.
 #' 2 dimensional function.
 #' See corresponding function with "TF_" for more details.
-#' @references Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School.
+#' @references Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School. Page 13.
 #' @export
 #' @rdname TF_OTL_Circuit
 #' @examples
@@ -520,6 +520,9 @@ TF_ackley <- function(x, a=20, b=0.2, c=2*pi) {
 #' piston: Piston simulation function.
 #' 7 dimensional function.
 #' @export
+#' @references Kenett, Ron S., Shelemyahu Zacks, and Daniele Amberti.
+#' Modern Industrial Statistics: with applications in R,
+#' MINITAB and JMP. John Wiley & Sons, 2013.
 #' @rdname test_func_apply
 #' @examples
 #' piston(runif(7))

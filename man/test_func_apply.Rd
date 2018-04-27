@@ -490,7 +490,7 @@ Dixon, L. C. W. (1978). The global optimization problem: an introduction. Toward
 
 Morris, M. D., Mitchell, T. J., & Ylvisaker, D. (1993). Bayesian design and analysis of computer experiments: use of derivatives in surface prediction. Technometrics, 35(3), 243-255.
 
-Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School.
+Franke, R. (1979). A critical comparison of some methods for interpolation of scattered data. Monterey, California: Naval Postgraduate School. Page 13.
 
 An, J., & Owen, A. (2001). Quasi-regression. Journal of complexity, 17(4), 588-607.
 
@@ -511,6 +511,10 @@ Canadian Journal of Statistics 30, no. 1 (2002): 109-126.
 Haario, H., Saksman, E., & Tamminen, J. (1999). Adaptive proposal distribution for random walk Metropolis algorithm. Computational Statistics, 14(3), 375-396.
 
 Joseph, V. R., Dasgupta, T., Tuo, R., & Wu, C. J. (2015). Sequential exploration of complex surfaces using minimum energy designs. Technometrics, 57(1), 64-74.
+
+Kenett, Ron S., Shelemyahu Zacks, and Daniele Amberti.
+Modern Industrial Statistics: with applications in R,
+MINITAB and JMP. John Wiley & Sons, 2013.
 
 Forrester, A., & Keane, A. (2008). Engineering design via surrogate modelling: a practical guide. John Wiley & Sons.
 
