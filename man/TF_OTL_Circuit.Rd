@@ -171,4 +171,8 @@ Currin, C., Mitchell, T., Morris, M., & Ylvisaker, D. (1991). Bayesian predictio
 Haario, H., Saksman, E., & Tamminen, J. (1999). Adaptive proposal distribution for random walk Metropolis algorithm. Computational Statistics, 14(3), 375-396.
 
 Joseph, V. R., Dasgupta, T., Tuo, R., & Wu, C. J. (2015). Sequential exploration of complex surfaces using minimum energy designs. Technometrics, 57(1), 64-74.
+
+Ben-Ari, Einat Neumann, and David M. Steinberg. "Modeling data
+from computer experiments: an empirical comparison of kriging with MARS and
+projection pursuit regression." Quality Engineering 19.4 (2007): 327-338.
 }

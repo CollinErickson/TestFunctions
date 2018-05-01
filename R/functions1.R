@@ -393,6 +393,9 @@ TF_powsin <- function(x, freq=2*pi, pow=.7) {
 
 #' OTL_Circuit: OTL Circuit.
 #' 6 dimensional function.
+#' @references Ben-Ari, Einat Neumann, and David M. Steinberg. "Modeling data
+#' from computer experiments: an empirical comparison of kriging with MARS and
+#' projection pursuit regression." Quality Engineering 19.4 (2007): 327-338.
 #' @export
 #' @rdname test_func_apply
 #' @examples
@@ -411,7 +414,9 @@ OTL_Circuit <- function(x, scale_it=T, scale_low = c(50,25,0.5,1.2,0.25,50), sca
 #'
 #' @return Function output evaluated at x.
 #' @export
-#'
+#' @references Ben-Ari, Einat Neumann, and David M. Steinberg. "Modeling data
+#' from computer experiments: an empirical comparison of kriging with MARS and
+#' projection pursuit regression." Quality Engineering 19.4 (2007): 327-338.
 #' @examples
 #' TF_OTL_Circuit(c(50,25,0.5,1.2,0.25,50))
 TF_OTL_Circuit <- function(x) {

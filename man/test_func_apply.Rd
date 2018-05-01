@@ -512,6 +512,10 @@ Haario, H., Saksman, E., & Tamminen, J. (1999). Adaptive proposal distribution f
 
 Joseph, V. R., Dasgupta, T., Tuo, R., & Wu, C. J. (2015). Sequential exploration of complex surfaces using minimum energy designs. Technometrics, 57(1), 64-74.
 
+Ben-Ari, Einat Neumann, and David M. Steinberg. "Modeling data
+from computer experiments: an empirical comparison of kriging with MARS and
+projection pursuit regression." Quality Engineering 19.4 (2007): 327-338.
+
 Kenett, Ron S., Shelemyahu Zacks, and Daniele Amberti.
 Modern Industrial Statistics: with applications in R,
 MINITAB and JMP. John Wiley & Sons, 2013.
