@@ -232,3 +232,33 @@ TF_steelcolumnstress <- function(x) {
   G <- x[1] - P * (t1 + t2)
   G
 }
+
+#' winkel: winkel function
+#' 2 dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @references Winkel, Munir A., Jonathan W. Stallings, Curt B. Storlie, and
+#' Brian J. Reich. "Sequential Optimization in Locally Important Dimensions."
+#' arXiv preprint arXiv:1804.10671 (2018).
+#' @examples
+#' winkel(runif(2))
+#' winkel(matrix(runif(2*20),ncol=2))
+winkel <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_winkel, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_winkel: winkel function for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#' @importFrom stats pnorm
+#' @return Function output evaluated at x.
+#' @export
+#' @references Winkel, Munir A., Jonathan W. Stallings, Curt B. Storlie, and
+#' Brian J. Reich. "Sequential Optimization in Locally Important Dimensions."
+#' arXiv preprint arXiv:1804.10671 (2018).
+#' @examples
+#' TF_winkel(rep(0,2))
+#' TF_winkel(rep(1,2))
+TF_winkel <- function(x) {
+  4*x[2]^2*pnorm(10*x[1]-4) + sin(5*pi*(x[1]-x[2]))*pnorm(4-10*x[1])
+}

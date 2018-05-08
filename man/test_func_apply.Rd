@@ -50,6 +50,7 @@
 \alias{beambending}
 \alias{chengsandu}
 \alias{steelcolumnstress}
+\alias{winkel}
 \alias{test_func_apply}
 \title{Test function.}
 \usage{
@@ -192,6 +193,8 @@ chengsandu(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
 steelcolumnstress(x, scale_it = T, scale_low = c(330, 4e+05, 420000, 420000,
   200, 10, 100, 10, 12600), scale_high = c(470, 6e+05, 780000, 780000, 400,
   30, 500, 50, 29400), noise = 0, ...)
+
+winkel(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -382,6 +385,9 @@ distributions, not all uniform.
 Don't use this.
 8 dimensional function.
 
+winkel: winkel function
+2 dimensional function.
+
 General function for evaluating a test function
 }
 \examples{
@@ -480,6 +486,8 @@ chengsandu(runif(2))
 chengsandu(matrix(runif(2*20),ncol=2))
 steelcolumnstress(runif(8))
 steelcolumnstress(matrix(runif(8*20),ncol=8))
+winkel(runif(2))
+winkel(matrix(runif(2*20),ncol=2))
 x <- matrix(seq(0,1,length.out=10), ncol=1)
 y <- test_func_apply(sin, x, TRUE, 0, 2*pi, .05)
 plot(x,y)
@@ -533,4 +541,8 @@ Cheng, Haiyan, and Adrian Sandu. "Collocation least-squares polynomial chaos met
 Kuschel, Norbert, and Rudiger Rackwitz. "Two basic problems in reliability-based structural optimization." Mathematical Methods of Operations Research 46, no. 3 (1997): 309-333.
 
 Prikhodko, Pavel, and Nikita Kotlyarov. "Calibration of Sobol indices estimates in case of noisy output." arXiv preprint arXiv:1804.00766 (2018).
+
+Winkel, Munir A., Jonathan W. Stallings, Curt B. Storlie, and
+Brian J. Reich. "Sequential Optimization in Locally Important Dimensions."
+arXiv preprint arXiv:1804.10671 (2018).
 }
