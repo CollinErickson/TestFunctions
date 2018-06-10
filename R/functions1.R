@@ -36,6 +36,7 @@ TF_branin <- function(x, a=1, b=5.1/(4*pi^2), cc=5/pi, r=6, s=10, tt=1/(8*pi)) {
 #' borehole: A function estimating water flow through a borehole.
 #' 8 dimensional function.
 #' @references Morris, M. D., Mitchell, T. J., & Ylvisaker, D. (1993). Bayesian design and analysis of computer experiments: use of derivatives in surface prediction. Technometrics, 35(3), 243-255.
+#' @references Worley, Brian A. Deterministic uncertainty analysis. No. ORNL-6428. Oak Ridge National Lab., TN (USA), 1987.
 #' @export
 #' @rdname test_func_apply
 #' @examples
@@ -50,6 +51,7 @@ borehole <- function(x, scale_it=T,
 #' 8 dimensional function.
 #' See corresponding function with "TF_" for more details.
 #' @references Morris, M. D., Mitchell, T. J., & Ylvisaker, D. (1993). Bayesian design and analysis of computer experiments: use of derivatives in surface prediction. Technometrics, 35(3), 243-255.
+#' @references Worley, Brian A. Deterministic uncertainty analysis. No. ORNL-6428. Oak Ridge National Lab., TN (USA), 1987.
 #' @export
 #' @rdname TF_OTL_Circuit
 #' @examples
