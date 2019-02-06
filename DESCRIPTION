@@ -13,9 +13,13 @@ Description: Test functions are often used to test computer code.
   their R code is not used.
 License: GPL-3
 LazyData: TRUE
-RoxygenNote: 6.0.1
-Suggests: knitr,
+RoxygenNote: 6.1.1
+Encoding: UTF-8
+Suggests: 
+    knitr,
     rmarkdown,
     numDeriv,
-    ContourFunctions
+    ContourFunctions,
+    covr,
+    testthat
 VignetteBuilder: knitr

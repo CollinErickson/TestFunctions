@@ -5,3 +5,5 @@ sudo: false
 cache: packages
 r_github_packages:
   - CollinErickson/contour
+after_success:
+  - Rscript -e 'covr::codecov()'

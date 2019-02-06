@@ -83,60 +83,6 @@ Function output evaluated at x.
 TF_branin: A function taking in a single vector.
 2 dimensional function.
 See corresponding function with "TF_" for more details.
-
-TF_borehole: A function taking in a single vector.
-8 dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_franke: A function taking in a single vector.
-2 dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_zhou1998: A function taking in a single vector.
-Any dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_currin1991: A function taking in a single vector.
-2 dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_currin1991b: A function taking in a single vector.
-2 dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_limpoly: A function taking in a single vector.
-2 dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_limnonpoly: A function taking in a single vector.
-2 dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_banana: A function taking in a single vector.
-2 dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_banana_grad: A function taking in a single vector.
-2 dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_gaussian1: A function taking in a single vector.
-Any dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_sinumoid: A function taking in a single vector.
-2 dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_sqrtsin: A function taking in a single vector.
-Any dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_powsin: A function taking in a single vector.
-Any dimensional function.
-See corresponding function with "TF_" for more details.
-
-TF_OTL_Circuit: OTL Circuit function for evaluating a single point
 }
 \examples{
 TF_branin(runif(2))

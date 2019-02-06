@@ -57,9 +57,9 @@
 branin(x, scale_it = T, scale_low = c(-5, 0), scale_high = c(10, 15),
   noise = 0)
 
-borehole(x, scale_it = T, scale_low = c(0.05, 100, 63070, 990, 63.1, 700,
-  1120, 9855), scale_high = c(0.15, 50000, 115600, 1110, 116, 820, 1680,
-  12045), noise = 0)
+borehole(x, scale_it = T, scale_low = c(0.05, 100, 63070, 990, 63.1,
+  700, 1120, 9855), scale_high = c(0.15, 50000, 115600, 1110, 116, 820,
+  1680, 12045), noise = 0)
 
 franke(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0)
@@ -67,23 +67,23 @@ franke(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
 zhou1998(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0)
 
-currin1991(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0)
+currin1991(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1,
+  1), noise = 0)
 
-currin1991b(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0)
+currin1991b(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1,
+  1), noise = 0)
 
 limpoly(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0)
 
-limnonpoly(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0)
+limnonpoly(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1,
+  1), noise = 0)
 
-banana(x, scale_it = T, scale_low = c(-20, -10), scale_high = c(20, 5),
-  noise = 0)
-
-banana_grad(x, scale_it = T, scale_low = c(-20, -10), scale_high = c(20,
+banana(x, scale_it = T, scale_low = c(-20, -10), scale_high = c(20,
   5), noise = 0)
+
+banana_grad(x, scale_it = T, scale_low = c(-20, -10),
+  scale_high = c(20, 5), noise = 0)
 
 gaussian1(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
   noise = 0)
@@ -103,8 +103,8 @@ powsin(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
 OTL_Circuit(x, scale_it = T, scale_low = c(50, 25, 0.5, 1.2, 0.25, 50),
   scale_high = c(150, 70, 3, 2.5, 1.2, 300), noise = 0)
 
-GoldsteinPrice(x, scale_it = T, scale_low = c(-2, -2), scale_high = c(2,
-  2), noise = 0)
+GoldsteinPrice(x, scale_it = T, scale_low = c(-2, -2),
+  scale_high = c(2, 2), noise = 0)
 
 GoldsteinPriceLog(x, scale_it = T, scale_low = c(-2, -2),
   scale_high = c(2, 2), noise = 0)
@@ -112,89 +112,98 @@ GoldsteinPriceLog(x, scale_it = T, scale_low = c(-2, -2),
 ackley(x, scale_it = T, scale_low = -32.768, scale_high = 32.768,
   noise = 0, a = 20, b = 0.2, c = 2 * pi)
 
-piston(x, scale_it = T, scale_low = c(30, 0.005, 0.002, 1000, 90000, 290,
-  340), scale_high = c(60, 0.02, 0.01, 5000, 110000, 296, 360), noise = 0)
+piston(x, scale_it = T, scale_low = c(30, 0.005, 0.002, 1000, 90000,
+  290, 340), scale_high = c(60, 0.02, 0.01, 5000, 110000, 296, 360),
+  noise = 0)
 
-wingweight(x, scale_it = T, scale_low = c(150, 220, 6, -10, 16, 0.5, 0.08,
-  2.5, 1700, 0.025), scale_high = c(200, 300, 10, 10, 45, 1, 0.18, 6, 2500,
-  0.08), noise = 0)
+wingweight(x, scale_it = T, scale_low = c(150, 220, 6, -10, 16, 0.5,
+  0.08, 2.5, 1700, 0.025), scale_high = c(200, 300, 10, 10, 45, 1, 0.18,
+  6, 2500, 0.08), noise = 0)
 
 welch(x, scale_it = T, scale_low = c(-0.5), scale_high = c(0.5),
   noise = 0)
 
-robotarm(x, scale_it = T, scale_low = rep(0, 8), scale_high = c(rep(2 *
-  pi, 4), rep(1, 4)), noise = 0)
+robotarm(x, scale_it = T, scale_low = rep(0, 8), scale_high = c(rep(2
+  * pi, 4), rep(1, 4)), noise = 0)
 
-RoosArnold(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0)
+RoosArnold(x, scale_it = F, scale_low = 0, scale_high = 1,
+  noise = 0)
 
-Gfunction(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0,
+Gfunction(x, scale_it = F, scale_low = 0, scale_high = 1,
+  noise = 0, ...)
+
+beale(x, scale_it = T, scale_low = -4.5, scale_high = 4.5,
+  noise = 0, ...)
+
+easom(x, scale_it = T, scale_low = -4.5, scale_high = 4.5,
+  noise = 0, ...)
+
+griewank(x, scale_it = T, scale_low = -600, scale_high = 600,
+  noise = 0, ...)
+
+hump(x, scale_it = T, scale_low = -5, scale_high = 5, noise = 0,
   ...)
 
-beale(x, scale_it = T, scale_low = -4.5, scale_high = 4.5, noise = 0,
+levy(x, scale_it = T, scale_low = -10, scale_high = 10, noise = 0,
   ...)
 
-easom(x, scale_it = T, scale_low = -4.5, scale_high = 4.5, noise = 0,
-  ...)
-
-griewank(x, scale_it = T, scale_low = -600, scale_high = 600, noise = 0,
-  ...)
-
-hump(x, scale_it = T, scale_low = -5, scale_high = 5, noise = 0, ...)
-
-levy(x, scale_it = T, scale_low = -10, scale_high = 10, noise = 0, ...)
-
-michalewicz(x, scale_it = T, scale_low = 0, scale_high = pi, noise = 0,
-  ...)
+michalewicz(x, scale_it = T, scale_low = 0, scale_high = pi,
+  noise = 0, ...)
 
 rastrigin(x, scale_it = T, scale_low = -5.12, scale_high = 5.12,
   noise = 0, ...)
 
-moon_high(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0,
-  ...)
+moon_high(x, scale_it = F, scale_low = 0, scale_high = 1,
+  noise = 0, ...)
 
 linkletter_nosignal(x, scale_it = F, scale_low = 0, scale_high = 1,
   noise = 0, ...)
 
-morris(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
-
-detpep8d(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
-
-hartmann(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0, ...)
-
-quad_peaks(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
+morris(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
   ...)
+
+detpep8d(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
+  ...)
+
+hartmann(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0,
+  ...)
+
+quad_peaks(x, scale_it = T, scale_low = 0, scale_high = 1,
+  noise = 0, ...)
 
 quad_peaks_slant(x, scale_it = T, scale_low = 0, scale_high = 1,
   noise = 0, ...)
 
-SWNExpCos(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
+SWNExpCos(x, scale_it = T, scale_low = 0, scale_high = 1,
+  noise = 0, ...)
+
+logistic(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
   ...)
 
-logistic(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
-
-logistic15(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
-  ...)
+logistic15(x, scale_it = T, scale_low = 0, scale_high = 1,
+  noise = 0, ...)
 
 logistic_plateau(x, scale_it = T, scale_low = 0, scale_high = 1,
   noise = 0, ...)
 
-vertigrad(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
-  ...)
+vertigrad(x, scale_it = T, scale_low = 0, scale_high = 1,
+  noise = 0, ...)
 
 vertigrad_grad(x, scale_it = T, scale_low = 0, scale_high = 1,
   noise = 0, ...)
 
-beambending(x, scale_it = T, scale_low = c(10, 1, 0.1), scale_high = c(20,
-  2, 0.2), noise = 0, ...)
+beambending(x, scale_it = T, scale_low = c(10, 1, 0.1),
+  scale_high = c(20, 2, 0.2), noise = 0, ...)
 
-chengsandu(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
+chengsandu(x, scale_it = T, scale_low = 0, scale_high = 1,
+  noise = 0, ...)
+
+steelcolumnstress(x, scale_it = T, scale_low = c(330, 4e+05, 420000,
+  420000, 200, 10, 100, 10, 12600), scale_high = c(470, 6e+05, 780000,
+  780000, 400, 30, 500, 50, 29400), noise = 0, ...)
+
+winkel(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
   ...)
-
-steelcolumnstress(x, scale_it = T, scale_low = c(330, 4e+05, 420000, 420000,
-  200, 10, 100, 10, 12600), scale_high = c(470, 6e+05, 780000, 780000, 400,
-  30, 500, 50, 29400), noise = 0, ...)
-
-winkel(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
@@ -233,162 +242,6 @@ Function values at x
 \description{
 branin: A function.
 2 dimensional function.
-
-borehole: A function estimating water flow through a borehole.
-8 dimensional function.
-
-franke: A function.
-2 dimensional function.
-
-zhou1998: A function.
-Any dimensional function.
-
-currin1991: A function.
-2 dimensional function.
-
-currin1991b: A function.
-2 dimensional function.
-
-limpoly: 2 dimensional function.
-Equation 27 from Lim et al 2002.
-
-limnonpoly: 2 dimensional function.
-Equation 28 from Lim et al 2002.
-
-banana: A banana shaped function. Originally from Haario et al (1999), it is a twisted Gaussian.
-2 dimensional function.
-
-banana_grad: The gradient of the banana function.
-2 dimensional function.
-2 dimensional output.
-
-gaussian1: A Gaussian function centered at 0.5.
-Any dimensional function.
-
-sinumoid: A sinusoid added to a sigmoid function.
-2 dimensional function.
-
-waterfall: A sinusoid added to a sigmoid function.
-2 dimensional function.
-
-sqrtsin: A square root of a sine function.
-Any dimensional function.
-
-powsin: A sine function raised to a power keeping its original sign.
-Any dimensional function.
-
-OTL_Circuit: OTL Circuit.
-6 dimensional function.
-
-GoldsteinPrice: Goldstein-Price function. Exponential scale, you
-might want to use GoldsteinPriceLog instead
-2 dimensional function.
-
-GoldsteinPriceLog: Goldstein-Price function on a log scale.
-2 dimensional function.
-
-ackley: Ackley function.
-2 dimensional function.
-
-piston: Piston simulation function.
-7 dimensional function.
-
-wingweight: Wing weight function.
-10 dimensional function.
-
-welch: Welch et al (1992) function.
-20 dimensional function.
-
-robotarm: Robot arm function.
-8 dimensional function.
-
-RoosArnold: Roos & Arnold (1963) function.
-d dimensional function.
-
-Gfunction: G-function
-d dimensional function.
-
-beale: Beale function
-2 dimensional function.
-
-easom: Easom function
-2 dimensional function.
-
-griewank: Griewank function
-n dimensional function.
-
-hump: Hump function
-2 dimensional function.
-
-levy: Levy function
-n dimensional function.
-
-michalewicz: Michalewicz function
-n dimensional function.
-
-rastrigin: Rastrigin function
-n dimensional function.
-
-moon_high: Moon (2010) high-dimensional function for screening
-20 dimensional function.
-
-linkletter_nosignal: Linkletter (2006) no signal function, just returns zero
-d dimensional function.
-
-Morris: Morris function
-20 dimensional function.
-
-detpep8d: detpep8d function
-8 dimensional function.
-
-hartmann: hartmann function
-6 dimensional function.
-
-quad_peaks: quad_peaks function
-2 dimensional function.
-
-quad_peaks_slant: quad_peaks_slant function
-2 dimensional function.
-
-SWNExpCos: SWNExpCos function
-Functoin from Santner, Williams, and Notz (2003).
-1 dimensional function.
-
-logistic: logistic function
-1 dimensional function.
-
-logistic15: logistic15 function.
-Same as logistic() except adjusted to be reasonable from 0 to 1,
-has a center at 0.5 and scale of 15.
-1 dimensional function.
-
-logistic_plateau: logistic_plateau function. Sum of two logistics with
-a plateau in the middle.
-1 dimensional function.
-
-vertigrad: vertigrad function
-2 dimensional function.
-
-vertigrad_grad: gradient of the vertigrad function
-2 dimensional function.
-2 dimensional output.
-
-beambending: beambending function
-3 dimensional function.
-
-chengsandu: chengsandu function
-2 dimensional function.
-
-steelcolumnstress: steelcolumnstress function. This is not checked and doesn't seem right.
-The parameter L is not defined in paper. The ranges for variables are on different
-distributions, not all uniform.
-Don't use this.
-8 dimensional function.
-
-winkel: winkel function
-2 dimensional function.
-
-General function for evaluating a test function
 }
 \examples{
 branin(runif(2))

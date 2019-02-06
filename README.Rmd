@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # TestFunctions
 
 [![Travis-CI Build Status](https://travis-ci.org/CollinErickson/TestFunctions.svg?branch=master)](https://travis-ci.org/CollinErickson/TestFunctions)
+[![Coverage status](https://codecov.io/gh/CollinErickson/TestFunctions/branch/master/graph/badge.svg)](https://codecov.io/github/CollinErickson/TestFunctions?branch=master)
 
 ## Why should I use it?
 
