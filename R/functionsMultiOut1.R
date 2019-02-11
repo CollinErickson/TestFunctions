@@ -14,7 +14,7 @@
 boreholeMV <- function(x, NOD=51, scale_it=T,
                      scale_low = c(.05,100,63070,990,63.1,700,1120,9855),
                      scale_high = c(.15,50000,115600,1110,116,820,1680,12045), noise=0) {
-  test_func_applyMO(func=TF_boreholeMV, x=x, numoutdim=NOD, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
+  test_func_applyMO(func=TF_boreholeMV, x=x, NOD=NOD, numoutdim=NOD, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise)
 }
 #' TF_boreholeMV: A function taking in a single vector.
 #' 8 dimensional function.
