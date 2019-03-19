@@ -163,7 +163,9 @@ beambending <- function(x, scale_it=T, scale_low = c(10,1,0.1), scale_high = c(2
 #' TF_beambending(rep(1,3))
 TF_beambending <- function(x) {
   # 4e-9 * L^3 / (b * h^3)
-  4e-9 * x[1]^3 / (x[2] * x[3]^3)
+  # 4e-9 * x[1]^3 / (x[2] * x[3]^3)
+  # Don't want to be on 1e-9 scale unnecessarily
+  4 * x[1]^3 / (x[2] * x[3]^3)
 }
 
 #' chengsandu: chengsandu function
