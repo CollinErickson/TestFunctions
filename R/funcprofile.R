@@ -1,3 +1,16 @@
+#' Profile a function
+#'
+#' Gives details about how linear it is.
+#'
+#' @param func A function with a single output
+#' @param d The number of input dimensions for the function
+#' @param n The number of points to use for the linear model.
+#'
+#' @return Nothing, prints and plots
+#' @export
+#'
+#' @examples
+#' funcprofile(ackley, 2)
 funcprofile <- function(func, d, n=1000*d) {
 
   # func <- TestFunctions::borehole
