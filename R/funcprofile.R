@@ -6,6 +6,8 @@
 #' @param d The number of input dimensions for the function
 #' @param n The number of points to use for the linear model.
 #'
+#' @importFrom stats sd predict lm
+#' @importFrom graphics plot abline
 #' @return Nothing, prints and plots
 #' @export
 #'
