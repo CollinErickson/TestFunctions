@@ -5,6 +5,7 @@
 #' @param func A function with a single output
 #' @param d The number of input dimensions for the function
 #' @param n The number of points to use for the linear model.
+#' @param bins Number of bins in histogram.
 #'
 #' @importFrom stats sd predict lm
 #' @importFrom graphics plot abline
@@ -13,7 +14,8 @@
 #'
 #' @examples
 #' funcprofile(ackley, 2)
-funcprofile <- function(func, d, n=1000*d) {
+funcprofile <- function(func, d, n=1000*d, bins=30) {
+  if (missing(d)) {stop("You must give in d, the number of input dimensions")}
 
   # func <- TestFunctions::borehole
   # d <- 8
@@ -34,7 +36,9 @@ funcprofile <- function(func, d, n=1000*d) {
   cat("Summary of y:\n")
   print(c(summary(y), sd=std))
   cat("Showing histogram of y")
-  print(ggplot2::ggplot(data.frame(y=y), ggplot2::aes_string(y)) + ggplot2::geom_histogram() + ggplot2::ggtitle("Histogram of y"))
+  print(ggplot2::ggplot(data.frame(y=y), ggplot2::aes_string(y)) +
+          ggplot2::geom_histogram(bins=bins) +
+          ggplot2::ggtitle("Histogram of y"))
   mod_lm <- lm(y ~ ., df)
   cat("Summary of linear model is:\n")
   print(summary(mod_lm))
@@ -65,7 +69,9 @@ funcprofile <- function(func, d, n=1000*d) {
   if (TRUE) {
     g <- apply(x, 1, function(xi) {numDeriv::grad(func, xi)})
     g2 <- colMeans(g^2)
-    print(ggplot2::ggplot(data.frame(g2=g2), ggplot2::aes_string(g2)) + ggplot2::geom_histogram() + ggplot2::ggtitle("Histogram of grad norm 2"))
+    print(ggplot2::ggplot(data.frame(g2=g2), ggplot2::aes_string(g2)) +
+            ggplot2::geom_histogram(bins=bins) +
+            ggplot2::ggtitle("Histogram of grad norm 2"))
 
   }
 }

@@ -4,7 +4,7 @@
 \alias{funcprofile}
 \title{Profile a function}
 \usage{
-funcprofile(func, d, n = 1000 * d)
+funcprofile(func, d, n = 1000 * d, bins = 30)
 }
 \arguments{
 \item{func}{A function with a single output}
@@ -12,6 +12,8 @@ funcprofile(func, d, n = 1000 * d)
 \item{d}{The number of input dimensions for the function}
 
 \item{n}{The number of points to use for the linear model.}
+
+\item{bins}{Number of bins in histogram.}
 }
 \value{
 Nothing, prints and plots
