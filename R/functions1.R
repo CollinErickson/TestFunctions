@@ -892,6 +892,38 @@ TF_levy <- function(x) {
 }
 
 
+#' levytilt: Levy function with a tilt
+#' n dimensional function.
+#' @export
+#' @rdname test_func_apply
+#' @examples
+#' levytilt(runif(2))
+#' levytilt(matrix(runif(2*20),ncol=2))
+levytilt <- function(x, scale_it=T, scale_low = 0, scale_high = 1, noise=0, ...) {
+  test_func_apply(func=TF_levytilt, x=x, scale_it=scale_it, scale_low = scale_low, scale_high = scale_high, noise=noise, ...)
+}
+
+#' TF_levytilt: Levy function with a tilt for evaluating a single point.
+#'
+#' @param x Input vector at which to evaluate.
+#'
+#' @return Function output evaluated at x.
+#' @export
+#'
+#' @examples
+#' TF_levytilt(rep(0,2))
+#' TF_levytilt(rep(1,2))
+TF_levytilt <- function(x) {
+  x[1] <- .5*(x[1] + .3*x[2] + .5)
+  x <- x*20 - 10
+  w <- 1 + (x-1) / 4
+  d <- length(w)
+  sin(pi*w[1])^2 +
+    sum((w[-d] - 1)^2 * (1 + 10*sin(pi*w[-d]+1)^2)) +
+    (w[d]-1)^2 * (1 + sin(2*pi*w[d])^2)
+}
+
+
 
 
 

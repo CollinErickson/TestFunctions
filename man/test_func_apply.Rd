@@ -34,6 +34,7 @@
 \alias{griewank}
 \alias{hump}
 \alias{levy}
+\alias{levytilt}
 \alias{michalewicz}
 \alias{rastrigin}
 \alias{moon_high}
@@ -156,6 +157,9 @@ hump(x, scale_it = T, scale_low = -5, scale_high = 5, noise = 0,
   ...)
 
 levy(x, scale_it = T, scale_low = -10, scale_high = 10, noise = 0,
+  ...)
+
+levytilt(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
   ...)
 
 michalewicz(x, scale_it = T, scale_low = 0, scale_high = pi,
@@ -322,6 +326,8 @@ hump(runif(2))
 hump(matrix(runif(2*20),ncol=2))
 levy(runif(2))
 levy(matrix(runif(2*20),ncol=2))
+levytilt(runif(2))
+levytilt(matrix(runif(2*20),ncol=2))
 michalewicz(runif(2))
 michalewicz(matrix(runif(2*20),ncol=2))
 rastrigin(runif(2))
