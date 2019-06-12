@@ -3,6 +3,7 @@
 %   R/functions1.R, R/functions2.R, R/functionsMultiOut1.R, R/test_func_apply.R
 \name{gramacy2Dexp}
 \alias{gramacy2Dexp}
+\alias{gramacy2Dexp3hole}
 \alias{gramacy6D}
 \alias{branin}
 \alias{borehole}
@@ -61,6 +62,9 @@
 From Gramacy and Lee (2009).}
 \usage{
 gramacy2Dexp(x, scale_it = T, scale_low = -2, scale_high = 6,
+  noise = 0, ...)
+
+gramacy2Dexp3hole(x, scale_it = T, scale_low = 0, scale_high = 1,
   noise = 0, ...)
 
 gramacy6D(x, scale_it = T, scale_low = 0, scale_high = 1,
@@ -267,6 +271,8 @@ branin: A function.
 \examples{
 gramacy2Dexp(runif(2))
 gramacy2Dexp(matrix(runif(2*20),ncol=2))
+gramacy2Dexp3hole(runif(2))
+gramacy2Dexp3hole(matrix(runif(2*20),ncol=2))
 gramacy6D(runif(6))
 gramacy6D(matrix(runif(6*20),ncol=6))
 branin(runif(2))
@@ -376,6 +382,10 @@ plot(x,y)
 curve(sin(2*pi*x), col=2, add=TRUE)
 }
 \references{
+Gramacy, Robert B., and Herbert KH Lee.
+"Adaptive design and analysis of supercomputer experiments."
+Technometrics 51.2 (2009): 130-145.
+
 Gramacy, Robert B., and Herbert KH Lee.
 "Adaptive design and analysis of supercomputer experiments."
 Technometrics 51.2 (2009): 130-145.
