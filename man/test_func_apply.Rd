@@ -4,6 +4,7 @@
 %   R/test_func_apply.R
 \name{bananagramacy2Dexp}
 \alias{bananagramacy2Dexp}
+\alias{bananatimesgramacy2Dexp}
 \alias{gramacy2Dexp}
 \alias{gramacy2Dexp3hole}
 \alias{gramacy6D}
@@ -67,6 +68,9 @@ last two are null dimensions}
 \usage{
 bananagramacy2Dexp(x, scale_it = T, scale_low = 0, scale_high = 1,
   noise = 0, ...)
+
+bananatimesgramacy2Dexp(x, scale_it = T, scale_low = 0,
+  scale_high = 1, noise = 0, ...)
 
 gramacy2Dexp(x, scale_it = T, scale_low = -2, scale_high = 6,
   noise = 0, ...)
@@ -278,6 +282,8 @@ branin: A function.
 \examples{
 bananagramacy2Dexp(runif(6))
 bananagramacy2Dexp(matrix(runif(6*20),ncol=6))
+bananatimesgramacy2Dexp(runif(6))
+bananatimesgramacy2Dexp(matrix(runif(6*20),ncol=6))
 gramacy2Dexp(runif(2))
 gramacy2Dexp(matrix(runif(2*20),ncol=2))
 gramacy2Dexp3hole(runif(2))
