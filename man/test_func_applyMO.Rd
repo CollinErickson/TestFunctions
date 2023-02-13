@@ -4,8 +4,16 @@
 \alias{test_func_applyMO}
 \title{General function for evaluating a test function with multivariate output}
 \usage{
-test_func_applyMO(func, x, numoutdim, scale_it, scale_low, scale_high,
-  noise = 0, ...)
+test_func_applyMO(
+  func,
+  x,
+  numoutdim,
+  scale_it,
+  scale_low,
+  scale_high,
+  noise = 0,
+  ...
+)
 }
 \arguments{
 \item{func}{A function to evaluate}

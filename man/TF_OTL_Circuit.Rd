@@ -19,8 +19,15 @@
 \alias{TF_boreholeMV}
 \title{Base test function.}
 \usage{
-TF_branin(x, a = 1, b = 5.1/(4 * pi^2), cc = 5/pi, r = 6, s = 10,
-  tt = 1/(8 * pi))
+TF_branin(
+  x,
+  a = 1,
+  b = 5.1/(4 * pi^2),
+  cc = 5/pi,
+  r = 6,
+  s = 10,
+  tt = 1/(8 * pi)
+)
 
 TF_borehole(x)
 

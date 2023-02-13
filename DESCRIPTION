@@ -13,7 +13,7 @@ Description: Test functions are often used to test computer code.
   their R code is not used.
 License: GPL-3
 LazyData: TRUE
-RoxygenNote: 6.1.1
+RoxygenNote: 7.2.3
 Encoding: UTF-8
 Suggests: 
     knitr,

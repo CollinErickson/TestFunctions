@@ -66,178 +66,301 @@ First two dimensions are banana function,
 next two are the gramacy2Dexp function,
 last two are null dimensions}
 \usage{
-bananagramacy2Dexp(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+bananagramacy2Dexp(
+  x,
+  scale_it = T,
+  scale_low = 0,
+  scale_high = 1,
+  noise = 0,
+  ...
+)
 
-bananatimesgramacy2Dexp(x, scale_it = T, scale_low = 0,
-  scale_high = 1, noise = 0, ...)
+bananatimesgramacy2Dexp(
+  x,
+  scale_it = T,
+  scale_low = 0,
+  scale_high = 1,
+  noise = 0,
+  ...
+)
 
-gramacy2Dexp(x, scale_it = T, scale_low = -2, scale_high = 6,
-  noise = 0, ...)
+gramacy2Dexp(x, scale_it = T, scale_low = -2, scale_high = 6, noise = 0, ...)
 
-gramacy2Dexp3hole(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+gramacy2Dexp3hole(
+  x,
+  scale_it = T,
+  scale_low = 0,
+  scale_high = 1,
+  noise = 0,
+  ...
+)
 
-gramacy6D(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+gramacy6D(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-branin(x, scale_it = T, scale_low = c(-5, 0), scale_high = c(10, 15),
-  noise = 0)
+branin(
+  x,
+  scale_it = T,
+  scale_low = c(-5, 0),
+  scale_high = c(10, 15),
+  noise = 0
+)
 
-borehole(x, scale_it = T, scale_low = c(0.05, 100, 63070, 990, 63.1,
-  700, 1120, 9855), scale_high = c(0.15, 50000, 115600, 1110, 116, 820,
-  1680, 12045), noise = 0)
+borehole(
+  x,
+  scale_it = T,
+  scale_low = c(0.05, 100, 63070, 990, 63.1, 700, 1120, 9855),
+  scale_high = c(0.15, 50000, 115600, 1110, 116, 820, 1680, 12045),
+  noise = 0
+)
 
-franke(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0)
+franke(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1), noise = 0)
 
-zhou1998(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0)
+zhou1998(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1), noise = 0)
 
-currin1991(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1,
-  1), noise = 0)
+currin1991(
+  x,
+  scale_it = F,
+  scale_low = c(0, 0),
+  scale_high = c(1, 1),
+  noise = 0
+)
 
-currin1991b(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1,
-  1), noise = 0)
+currin1991b(
+  x,
+  scale_it = F,
+  scale_low = c(0, 0),
+  scale_high = c(1, 1),
+  noise = 0
+)
 
-limpoly(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0)
+limpoly(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1), noise = 0)
 
-limnonpoly(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1,
-  1), noise = 0)
+limnonpoly(
+  x,
+  scale_it = F,
+  scale_low = c(0, 0),
+  scale_high = c(1, 1),
+  noise = 0
+)
 
-banana(x, scale_it = T, scale_low = c(-20, -10), scale_high = c(20,
-  5), noise = 0)
+banana(
+  x,
+  scale_it = T,
+  scale_low = c(-20, -10),
+  scale_high = c(20, 5),
+  noise = 0
+)
 
-banana_grad(x, scale_it = T, scale_low = c(-20, -10),
-  scale_high = c(20, 5), noise = 0)
+banana_grad(
+  x,
+  scale_it = T,
+  scale_low = c(-20, -10),
+  scale_high = c(20, 5),
+  noise = 0
+)
 
-gaussian1(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0)
+gaussian1(
+  x,
+  scale_it = F,
+  scale_low = c(0, 0),
+  scale_high = c(1, 1),
+  noise = 0
+)
 
-sinumoid(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0)
+sinumoid(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1), noise = 0)
 
-waterfall(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0)
+waterfall(
+  x,
+  scale_it = F,
+  scale_low = c(0, 0),
+  scale_high = c(1, 1),
+  noise = 0
+)
 
-sqrtsin(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0, freq = 2 * pi)
+sqrtsin(
+  x,
+  scale_it = F,
+  scale_low = c(0, 0),
+  scale_high = c(1, 1),
+  noise = 0,
+  freq = 2 * pi
+)
 
-powsin(x, scale_it = F, scale_low = c(0, 0), scale_high = c(1, 1),
-  noise = 0, freq = 2 * pi, pow = 0.7)
+powsin(
+  x,
+  scale_it = F,
+  scale_low = c(0, 0),
+  scale_high = c(1, 1),
+  noise = 0,
+  freq = 2 * pi,
+  pow = 0.7
+)
 
-OTL_Circuit(x, scale_it = T, scale_low = c(50, 25, 0.5, 1.2, 0.25, 50),
-  scale_high = c(150, 70, 3, 2.5, 1.2, 300), noise = 0)
+OTL_Circuit(
+  x,
+  scale_it = T,
+  scale_low = c(50, 25, 0.5, 1.2, 0.25, 50),
+  scale_high = c(150, 70, 3, 2.5, 1.2, 300),
+  noise = 0
+)
 
-GoldsteinPrice(x, scale_it = T, scale_low = c(-2, -2),
-  scale_high = c(2, 2), noise = 0)
+GoldsteinPrice(
+  x,
+  scale_it = T,
+  scale_low = c(-2, -2),
+  scale_high = c(2, 2),
+  noise = 0
+)
 
-GoldsteinPriceLog(x, scale_it = T, scale_low = c(-2, -2),
-  scale_high = c(2, 2), noise = 0)
+GoldsteinPriceLog(
+  x,
+  scale_it = T,
+  scale_low = c(-2, -2),
+  scale_high = c(2, 2),
+  noise = 0
+)
 
-ackley(x, scale_it = T, scale_low = -32.768, scale_high = 32.768,
-  noise = 0, a = 20, b = 0.2, c = 2 * pi)
+ackley(
+  x,
+  scale_it = T,
+  scale_low = -32.768,
+  scale_high = 32.768,
+  noise = 0,
+  a = 20,
+  b = 0.2,
+  c = 2 * pi
+)
 
-piston(x, scale_it = T, scale_low = c(30, 0.005, 0.002, 1000, 90000,
-  290, 340), scale_high = c(60, 0.02, 0.01, 5000, 110000, 296, 360),
-  noise = 0)
+piston(
+  x,
+  scale_it = T,
+  scale_low = c(30, 0.005, 0.002, 1000, 90000, 290, 340),
+  scale_high = c(60, 0.02, 0.01, 5000, 110000, 296, 360),
+  noise = 0
+)
 
-wingweight(x, scale_it = T, scale_low = c(150, 220, 6, -10, 16, 0.5,
-  0.08, 2.5, 1700, 0.025), scale_high = c(200, 300, 10, 10, 45, 1, 0.18,
-  6, 2500, 0.08), noise = 0)
+wingweight(
+  x,
+  scale_it = T,
+  scale_low = c(150, 220, 6, -10, 16, 0.5, 0.08, 2.5, 1700, 0.025),
+  scale_high = c(200, 300, 10, 10, 45, 1, 0.18, 6, 2500, 0.08),
+  noise = 0
+)
 
-welch(x, scale_it = T, scale_low = c(-0.5), scale_high = c(0.5),
-  noise = 0)
+welch(x, scale_it = T, scale_low = c(-0.5), scale_high = c(0.5), noise = 0)
 
-robotarm(x, scale_it = T, scale_low = rep(0, 8), scale_high = c(rep(2
-  * pi, 4), rep(1, 4)), noise = 0)
+robotarm(
+  x,
+  scale_it = T,
+  scale_low = rep(0, 8),
+  scale_high = c(rep(2 * pi, 4), rep(1, 4)),
+  noise = 0
+)
 
-RoosArnold(x, scale_it = F, scale_low = 0, scale_high = 1,
-  noise = 0)
+RoosArnold(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0)
 
-Gfunction(x, scale_it = F, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+Gfunction(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-beale(x, scale_it = T, scale_low = -4.5, scale_high = 4.5,
-  noise = 0, ...)
+beale(x, scale_it = T, scale_low = -4.5, scale_high = 4.5, noise = 0, ...)
 
-easom(x, scale_it = T, scale_low = -4.5, scale_high = 4.5,
-  noise = 0, ...)
+easom(x, scale_it = T, scale_low = -4.5, scale_high = 4.5, noise = 0, ...)
 
-griewank(x, scale_it = T, scale_low = -600, scale_high = 600,
-  noise = 0, ...)
+griewank(x, scale_it = T, scale_low = -600, scale_high = 600, noise = 0, ...)
 
-hump(x, scale_it = T, scale_low = -5, scale_high = 5, noise = 0,
-  ...)
+hump(x, scale_it = T, scale_low = -5, scale_high = 5, noise = 0, ...)
 
-levy(x, scale_it = T, scale_low = -10, scale_high = 10, noise = 0,
-  ...)
+levy(x, scale_it = T, scale_low = -10, scale_high = 10, noise = 0, ...)
 
-levytilt(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
-  ...)
+levytilt(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-michalewicz(x, scale_it = T, scale_low = 0, scale_high = pi,
-  noise = 0, ...)
+michalewicz(x, scale_it = T, scale_low = 0, scale_high = pi, noise = 0, ...)
 
-rastrigin(x, scale_it = T, scale_low = -5.12, scale_high = 5.12,
-  noise = 0, ...)
+rastrigin(
+  x,
+  scale_it = T,
+  scale_low = -5.12,
+  scale_high = 5.12,
+  noise = 0,
+  ...
+)
 
-moon_high(x, scale_it = F, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+moon_high(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-linkletter_nosignal(x, scale_it = F, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+linkletter_nosignal(
+  x,
+  scale_it = F,
+  scale_low = 0,
+  scale_high = 1,
+  noise = 0,
+  ...
+)
 
-morris(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
-  ...)
+morris(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-detpep8d(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
-  ...)
+detpep8d(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-hartmann(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0,
-  ...)
+hartmann(x, scale_it = F, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-quad_peaks(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+quad_peaks(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-quad_peaks_slant(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+quad_peaks_slant(
+  x,
+  scale_it = T,
+  scale_low = 0,
+  scale_high = 1,
+  noise = 0,
+  ...
+)
 
-SWNExpCos(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+SWNExpCos(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-logistic(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
-  ...)
+logistic(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-logistic15(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+logistic15(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-logistic_plateau(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+logistic_plateau(
+  x,
+  scale_it = T,
+  scale_low = 0,
+  scale_high = 1,
+  noise = 0,
+  ...
+)
 
-vertigrad(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+vertigrad(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-vertigrad_grad(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+vertigrad_grad(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-beambending(x, scale_it = T, scale_low = c(10, 1, 0.1),
-  scale_high = c(20, 2, 0.2), noise = 0, ...)
+beambending(
+  x,
+  scale_it = T,
+  scale_low = c(10, 1, 0.1),
+  scale_high = c(20, 2, 0.2),
+  noise = 0,
+  ...
+)
 
-chengsandu(x, scale_it = T, scale_low = 0, scale_high = 1,
-  noise = 0, ...)
+chengsandu(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-steelcolumnstress(x, scale_it = T, scale_low = c(330, 4e+05, 420000,
-  420000, 200, 10, 100, 10, 12600), scale_high = c(470, 6e+05, 780000,
-  780000, 400, 30, 500, 50, 29400), noise = 0, ...)
+steelcolumnstress(
+  x,
+  scale_it = T,
+  scale_low = c(330, 4e+05, 420000, 420000, 200, 10, 100, 10, 12600),
+  scale_high = c(470, 6e+05, 780000, 780000, 400, 30, 500, 50, 29400),
+  noise = 0,
+  ...
+)
 
-winkel(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0,
-  ...)
+winkel(x, scale_it = T, scale_low = 0, scale_high = 1, noise = 0, ...)
 
-boreholeMV(x, NOD = 51, scale_it = T, scale_low = c(0.05, 100, 63070,
-  990, 63.1, 700, 1120, 9855), scale_high = c(0.15, 50000, 115600, 1110,
-  116, 820, 1680, 12045), noise = 0)
+boreholeMV(
+  x,
+  NOD = 51,
+  scale_it = T,
+  scale_low = c(0.05, 100, 63070, 990, 63.1, 700, 1120, 9855),
+  scale_high = c(0.15, 50000, 115600, 1110, 116, 820, 1680, 12045),
+  noise = 0
+)
 
 test_func_apply(func, x, scale_it, scale_low, scale_high, noise = 0, ...)
 }
