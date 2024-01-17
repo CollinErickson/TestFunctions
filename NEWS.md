@@ -1,6 +1,8 @@
-# TestFunctions 0.2.0.9000
+# TestFunctions 0.2.1
 
-Work in progress.
+Various changes made over the years.
+
+Error in the borehole function fixed.
 
 # TestFunctions 0.2.0
 

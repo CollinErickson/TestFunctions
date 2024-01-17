@@ -15,8 +15,12 @@ knitr::opts_chunk$set(
 
 # TestFunctions
 
-[![Travis-CI Build Status](https://travis-ci.org/CollinErickson/TestFunctions.svg?branch=master)](https://travis-ci.org/CollinErickson/TestFunctions)
-[![Coverage status](https://codecov.io/gh/CollinErickson/TestFunctions/branch/master/graph/badge.svg)](https://codecov.io/github/CollinErickson/TestFunctions?branch=master)
+<!-- badges: start -->
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/TestFunctions)](https://cran.r-project.org/package=TestFunctions)
+[![codecov](https://codecov.io/github/CollinErickson/TestFunctions/graph/badge.svg?token=FMnP9TEFBk)](https://codecov.io/github/CollinErickson/TestFunctions)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/last-month/TestFunctions?color=blue)](https://r-pkg.org/pkg/TestFunctions)
+[![R-CMD-check](https://github.com/CollinErickson/TestFunctions/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CollinErickson/TestFunctions/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 ## Why should I use it?
 

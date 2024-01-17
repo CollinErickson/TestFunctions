@@ -11,6 +11,9 @@ I added a lot of new features since the last release.
 win-builder suggests that "metamodeling" is a misspelled word
 in the DESCRIPTION, but it is correct.
 
+R-hub:
+Windows Server 2022 (1/15/24): 3 NOTEs, none of which seem to be an issue.
+
 ## Downstream dependencies
 
 No problems according to devtools.

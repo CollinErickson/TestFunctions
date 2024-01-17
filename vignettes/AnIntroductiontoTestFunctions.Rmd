@@ -102,6 +102,6 @@ The R package [`smoof`](https://cran.r-project.org/package=smoof) also provides 
 
 Mike McCourt's GitHub repository [evalset](https://github.com/sigopt/evalset) provides many test functions for Python.
 
-[HPOlib](http://www.automl.org/benchmarks.html) provides some benchmark functions for Python.
+[HPOlib](https://www.automl.org/legacy/benchmarks.html) provides some benchmark functions for Python.
 
-[Finck et al (2009)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.232.650&rep=rep1&type=pdf) provide details for 24 benchmark functions.
+[Hansen et al (2009)](https://inria.hal.science/inria-00362633v2/document) provide details for 24 benchmark functions.
