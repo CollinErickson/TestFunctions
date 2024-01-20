@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/TestFunctions)](https://cran.r-project.org/package=TestFunctions)
-[![codecov](https://codecov.io/github/CollinErickson/TestFunctions/graph/badge.svg?token=FMnP9TEFBk)](https://codecov.io/github/CollinErickson/TestFunctions)
+[![codecov](https://codecov.io/github/CollinErickson/TestFunctions/graph/badge.svg?token=FMnP9TEFBk)](https://app.codecov.io/github/CollinErickson/TestFunctions)
 [![CRAN RStudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/last-month/TestFunctions?color=blue)](https://r-pkg.org/pkg/TestFunctions)
 [![R-CMD-check](https://github.com/CollinErickson/TestFunctions/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CollinErickson/TestFunctions/actions/workflows/R-CMD-check.yaml)
