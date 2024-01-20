@@ -10,7 +10,6 @@ Description: Test functions are often used to test computer code.
   metamodeling to evaluate model predictions. This package provides
   test functions that can be used for any purpose.
 License: GPL-3
-LazyData: TRUE
 RoxygenNote: 7.2.3
 Encoding: UTF-8
 Suggests: 

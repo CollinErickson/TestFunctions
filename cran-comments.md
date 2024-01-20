@@ -9,7 +9,7 @@ that should have been fixed years ago.
 
 ## R CMD check results
 
-On Windows 11 (1/19/24): "Status: OK"
+On Windows 11 (1/20/24): 0 errors/warnings/notes
 
 win-builder (check_win_release, 1/19/24): "Status: OK"
 
