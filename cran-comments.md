@@ -3,7 +3,7 @@ that should have been fixed years ago.
 
 ## Test environments
 * local Windows 11 install, R 4.3.2
-* Ubuntu 22.04 (on Github Actions), R 4.3.3
+* Ubuntu 22.04 (on Github Actions), R 4.3.2
 * win-builder (devel and release)
 * R-hub
 
@@ -13,7 +13,7 @@ On Windows 11 (1/20/24): 0 errors/warnings/notes
 
 win-builder (check_win_release, 1/19/24): "Status: OK"
 
-win-builder(check_win_devel, 1/18/24): "Status: OK"
+win-builder(check_win_devel, 1/20/24): "Status: OK"
 
 R-hub:
 Windows Server 2022 (1/19/24): 2 NOTEs, neither are a real issue.
