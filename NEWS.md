@@ -1,8 +1,12 @@
+# TestFunctions 0.2.1.9000
+
 # TestFunctions 0.2.1
 
 Various changes made over the years.
 
 Error in the borehole function fixed.
+
+Accepted to CRAN on 1/21/24.
 
 # TestFunctions 0.2.0
 

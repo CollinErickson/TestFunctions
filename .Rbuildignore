@@ -8,3 +8,4 @@ cran-comments.md
 Scratch
 ^revdep$
 ^\.github$
+^CRAN-SUBMISSION$
