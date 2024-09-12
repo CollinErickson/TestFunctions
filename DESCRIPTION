@@ -10,13 +10,14 @@ Description: Test functions are often used to test computer code.
   metamodeling to evaluate model predictions. This package provides
   test functions that can be used for any purpose.
 License: GPL-3
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Encoding: UTF-8
+Depends:
+    ContourFunctions,
+    numDeriv,
+    rmarkdown
 Suggests: 
     knitr,
-    rmarkdown,
-    numDeriv,
-    ContourFunctions,
     covr,
     ggplot2,
     lhs,
