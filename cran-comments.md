@@ -1,10 +1,11 @@
-I added some new features since the last release and fixed some minor issues
-that should have been fixed years ago.
+I received an email that I need to fix the Suggests issue. I have fixed that
+issue.
 
 ## Test environments
-* local Windows 11 install, R 4.3.2
+* local Windows 11 install, R 4.4.1
 * Ubuntu 22.04 (on Github Actions), R 4.3.2
 * win-builder (devel and release)
+* mac-builder
 * R-hub
 
 ## R CMD check results
