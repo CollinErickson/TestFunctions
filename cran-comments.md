@@ -34,4 +34,6 @@ On GitHub Actions (9/13/24): OK
 
 There is one reverse import: optimizeR
 
-This fix will get make sure that optimizeR still works.
+This fix will get make sure that optimizeR still works. I couldn't get
+revdepcheck to work, but I cloned the GitHub repo and ran check on my laptop
+and it passed with no issues.
