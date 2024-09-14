@@ -10,7 +10,11 @@ issue.
 
 ## R CMD check results
 
-On Windows 11 (1/20/24): 0 errors/warnings/notes
+On Windows 11, R 4.4.1 (9/13/24): 0 errors/warnings/notes
+
+mac-builder, R 4.4.0 (9/11/24): 1 WARNING
+There's a warning due to my other package that was just updated on CRAN.
+Warning: package ‘ContourFunctions’ was built under R version 4.4.1
 
 win-builder (check_win_release, 1/19/24): "Status: OK"
 
