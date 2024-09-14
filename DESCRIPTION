@@ -3,7 +3,10 @@ Type: Package
 Title: Test Functions for Simulation Experiments and
   Evaluating Optimization and Emulation Algorithms
 Version: 0.2.2
-Author: Collin Erickson
+Authors@R: person(given = "Collin",
+                  family = "Erickson",
+                  role = c("aut", "cre"),
+                  email = "collinberickson@gmail.com")
 Maintainer: Collin Erickson <collinberickson@gmail.com>
 Description: Test functions are often used to test computer code.
   They are used in optimization to test algorithms and in
