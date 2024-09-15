@@ -1,7 +1,11 @@
+# TestFunctions 0.2.2.9000
+
 # TestFunctions 0.2.2
 
 Fixed Suggests issue to stay on CRAN. Packages were moved to Depends,
 removed, or changed to only be used within requireNamespace.
+
+Accepted to CRAN on 9/15/24.
 
 # TestFunctions 0.2.1
 
