@@ -2,25 +2,25 @@ Package: TestFunctions
 Type: Package
 Title: Test Functions for Simulation Experiments and
   Evaluating Optimization and Emulation Algorithms
-Version: 0.2.1
-Author: Collin Erickson
+Version: 0.2.2.9000
+Authors@R: person(given = "Collin",
+                  family = "Erickson",
+                  role = c("aut", "cre"),
+                  email = "collinberickson@gmail.com")
 Maintainer: Collin Erickson <collinberickson@gmail.com>
 Description: Test functions are often used to test computer code.
   They are used in optimization to test algorithms and in
   metamodeling to evaluate model predictions. This package provides
   test functions that can be used for any purpose.
 License: GPL-3
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Encoding: UTF-8
-URL: https://github.com/CollinErickson/TestFunctions
-BugReports: https://github.com/CollinErickson/TestFunctions/issues
+Depends:
+    ContourFunctions,
+    numDeriv,
+    rmarkdown
 Suggests: 
     knitr,
-    rmarkdown,
-    numDeriv,
-    ContourFunctions,
-    covr,
     ggplot2,
-    lhs,
     testthat
 VignetteBuilder: knitr
